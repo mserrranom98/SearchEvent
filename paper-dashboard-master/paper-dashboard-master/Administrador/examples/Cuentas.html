@@ -16,7 +16,7 @@ The above copyright notice and this permission notice shall be included in all c
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html  lang="en" xmlns="http://www.w3.org/1999/xhtml" >
 
 <head>
   <meta charset="utf-8" />
@@ -24,7 +24,7 @@ The above copyright notice and this permission notice shall be included in all c
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Paper Dashboard 2 by Creative Tim
+    Cuentas
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -37,7 +37,7 @@ The above copyright notice and this permission notice shall be included in all c
   <link href="../assets/demo/demo.css" rel="stylesheet" />
 </head>
 
-<body class="">
+<body class="dx-viewport">
   <div class="wrapper ">
     <div class="sidebar" data-color="white" data-active-color="danger">
       <!--
@@ -58,45 +58,27 @@ The above copyright notice and this permission notice shall be included in all c
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="active ">
-            <a href="./dashboard.html">
-              <i class="nc-icon nc-bank"></i>
-              <p>Home</p>
-            </a>
-          </li>
-          <li>
-            <a href="./user.html">
-              <i class="nc-icon nc-diamond"></i>
-              <p>Empresa</p>
-            </a>
-          </li>
-          <li>
-            <a href="./map.html">
-              <i class="nc-icon nc-pin-3"></i>
-              <p>Eventos</p>
-            </a>
-          </li>
-          <li>
-            <a href="./notifications.html">
-              <i class="nc-icon nc-bell-55"></i>
-              <p>Actividades</p>
-            </a>
-          </li>
-          <li>
-            <a href="./user.html">
+            <a href="./Cuentas.html">
               <i class="nc-icon nc-single-02"></i>
-              <p>Estadisticas</p>
+              <p>Cuentas</p>
             </a>
           </li>
           <li>
-            <a href="./tables.html">
-              <i class="nc-icon nc-tile-56"></i>
-              <p>Trabajadores</p>
+            <a href="./Establecimientos.html">
+              <i class="nc-icon nc-bank"></i>
+              <p>Establecimientos</p>
+            </a>
+          </li>
+          <li>
+            <a href="./Empresa.html">
+              <i class="nc-icon nc-briefcase-24"></i>
+              <p>Empresa</p>
             </a>
           </li>
         </ul>
       </div>
     </div>
-   <div class="main-panel">
+    <div class="main-panel">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
         <div class="container-fluid">
@@ -108,7 +90,7 @@ The above copyright notice and this permission notice shall be included in all c
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="#pablo">Empresa</a>
+            <a class="navbar-brand" href="#pablo">Cuentas</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -116,7 +98,7 @@ The above copyright notice and this permission notice shall be included in all c
             <span class="navbar-toggler-bar navbar-kebab"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end" id="navigation">
-
+        
             <ul class="navbar-nav">
               <li class="nav-item">
                 <a class="nav-link btn-magnify" href="#pablo">
@@ -150,114 +132,36 @@ The above copyright notice and this permission notice shall be included in all c
         </div>
       </nav>
       <!-- End Navbar -->
-      <!-- <div class="panel-header panel-header-sm">
+      <!-- <div class="panel-header panel-header-lg">
+
+  <canvas id="bigDashboardChart"></canvas>
 
 
 </div> -->
+   
       <div class="content">
-  
-     
-            
-          <div class="col-md-8">
-            <div class="card card-user">
-              <div class="card-header">
-                <h5 class="card-title">Empresa 1</h5>
-              </div>
+       <div class="col-md-3 pr-3">
+        <div class="form-group">
+          <div class="demo-container">
+        <div id="gridContainer"></div>
 
-              <div class="card-header">
-                <h7 class="card-title">Informacion general</h7>
-              </div>
 
-              <div class="card-body">
-                <form>
-                  <div class="row">
-                    <div class="col-md-5 pr-1">
-                      <div class="form-group">
-                        <label>Nombre</label>
-                        <input type="text" class="form-control" disabled="" placeholder="Empresa 1" value="Nombre">
-                      </div>
-                    </div>
-                      </div>
-                    <div class="row">
-                    <div class="col-md-5 pr-1">
-                       <div class="form-group">
-                        <label>Ocupacion</label>
-                        <input type="text" class="form-control" disabled="" placeholder="Eventos" value="Eventos">
-                      </div>
-                    </div>
-                    </div>
-                  
-                    <h7 class="card-title">Informacion de contacto</h7>
-          
-                  <div class="row">
-                  <div class="col-md-5 pr-1">
-                      <div class="form-group"><br>
-                        <label>Correo</label>
-                        <input type="text" class="form-control" disabled="" placeholder="ejemplo1@gmail.com" value="ejemplo1@gmail.com">
-                      </div>
-                       </div>
-                          </div>
-                    <div class="row">
-                    <div class="col-md-5 pr-1">
-                      <div class="form-group">
-                        <label>Telefono</label>
-                        <input type="text" class="form-control" disabled="" placeholder="98412354" value="98412354">
-                      </div>
-                    </div>
-                    </div>
-               
-                    <h7 class="card-title">Informacion adicional</h7>
 
-                  <div class="row">
-                    <div class="col-md-5 pr-1">
-                      <div class="form-group"><br>
-                        <label>Telefono</label>
-                        <input type="text" class="form-control" disabled="" placeholder="98412354" value="98412354">
-                      </div>
-                    </div>
-                    </div>
-                 <div class="row">
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <label>Descripcion</label>
-                        <textarea class="form-control textarea" disabled="">Descripcion......</textarea>
-                      </div>
-                    </div>
-                  </div>
+         </div>
 
-                  <div class="row">
-                    <div class="update ml-auto mr-auto">
-                      <button type="submit" class="btn btn-warning btn-round">Editar</button>
-                    </div>
-                  </div>
-                </form>
-              </div>
             </div>
           </div>
         </div>
-      </div>
+    
       <footer class="footer footer-black  footer-white ">
         <div class="container-fluid">
           <div class="row">
             <nav class="footer-nav">
-              <ul>
-                <li>
-                  <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>
-                </li>
-                <li>
-                  <a href="http://blog.creative-tim.com/" target="_blank">Blog</a>
-                </li>
-                <li>
-                  <a href="https://www.creative-tim.com/license" target="_blank">Licenses</a>
-                </li>
-              </ul>
+        
             </nav>
             <div class="credits ml-auto">
               <span class="copyright">
-                ©
-                <script>
-                  document.write(new Date().getFullYear())
-                </script>, made with <i class="fa fa-heart heart"></i> by Creative Tim
+                
               </span>
             </div>
           </div>
@@ -280,6 +184,12 @@ The above copyright notice and this permission notice shall be included in all c
   <script src="../assets/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
   <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
+      demo.initChartsPages();
+    });
+  </script>
 </body>
 
 </html>
