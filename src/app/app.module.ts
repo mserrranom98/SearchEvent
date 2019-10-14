@@ -8,6 +8,11 @@ import {SesionComponent} from './pages/layout/sesion/sesion.component';
 import {SharedModule} from './shared/shared.module';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
+import {AngularFireAuthModule} from '@angular/fire/auth';
+import {environment} from '../environments/environment';
+import {AuthGuardService} from "./shared/services/auth/auth-guard.service";
 
 @NgModule({
   declarations: [
@@ -20,10 +25,14 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
   ],
   providers: [
-    HttpClient
+    HttpClient,
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })
