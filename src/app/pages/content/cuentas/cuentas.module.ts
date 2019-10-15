@@ -6,7 +6,6 @@ import { ConsultaComponent } from './consulta/consulta.component';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {DxDataGridModule} from 'devextreme-angular';
 
-
 @NgModule({
   declarations: [ConsultaComponent],
   imports: [
