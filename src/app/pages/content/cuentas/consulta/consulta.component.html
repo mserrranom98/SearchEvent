@@ -1,4 +1,4 @@
-<div class="col-md-3 pr-3">
+<div class="col-md-12 pr-12">
   <div class="form-group">
     <div class="demo-container">
       <div id="gridContainer">
@@ -9,40 +9,35 @@
             [dataSource]="employees"
             keyExpr="ID"
             [showBorders]="true">
-
+            <dxo-filter-row
+              [visible]="showFilterRow"
+              [applyFilter]="currentFilter"></dxo-filter-row>
+            <dxo-header-filter
+              [visible]="showHeaderFilter"></dxo-header-filter>
+            <dxo-search-panel
+              [visible]="true"
+              [width]="240"
+              placeholder="Buscar..."></dxo-search-panel>
             <dxo-paging [enabled]="false"></dxo-paging>
             <dxo-editing
               mode="form"
               [allowAdding]="true"
               [allowUpdating]="true">
+            <dxo-texts saveRowChanges="Guardar" cancelRowChanges="Cancelar" editRow="Editar"></dxo-texts>
             </dxo-editing>
-
-            <dxi-column dataField="Prefix" caption="Title" [width]="70"></dxi-column>
-            <dxi-column dataField="FirstName"></dxi-column>
-            <dxi-column dataField="LastName"></dxi-column>
-            <dxi-column dataField="Position" [width]="170"></dxi-column>
+            <dxi-column dataField="Rut" caption="Rut" [width]="70"></dxi-column>
+            <dxi-column dataField="Nombre"></dxi-column>
+            <dxi-column dataField="Apellido"></dxi-column>
+            <dxi-column dataField="Correo" [width]="170"></dxi-column>
             <dxi-column
-              dataField="StateID"
-              caption="State"
-              [width]="125">
-              <dxo-lookup
-                [dataSource]="states"
-                displayExpr="Name"
-                valueExpr="ID">
-              </dxo-lookup>
+              dataField="Estado">
             </dxi-column>
             <dxi-column
-              dataField="BirthDate"
-              dataType="date">
+              dataField="Perfil">
             </dxi-column>
             <dxi-column
-              dataField="Notes"
+              dataField="Contraseña"
               [visible]="false">
-              <dxo-form-item
-                [colSpan]="2"
-                editorType="dxTextArea"
-                [editorOptions]="{ height: 100 }">
-              </dxo-form-item>
             </dxi-column>
           </dx-data-grid>
         </div>
