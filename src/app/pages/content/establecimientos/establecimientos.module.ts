@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 
 import {EstablecimientosRoutingModule} from './establecimientos-routing.module';
 import {ConsultaComponent} from './consulta/consulta.component';
+import {DxDataGridModule} from 'devextreme-angular';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import {ConsultaComponent} from './consulta/consulta.component';
   ],
   imports: [
     CommonModule,
-    EstablecimientosRoutingModule
+    EstablecimientosRoutingModule,
+    DxDataGridModule
   ]
 })
 export class EstablecimientosModule {

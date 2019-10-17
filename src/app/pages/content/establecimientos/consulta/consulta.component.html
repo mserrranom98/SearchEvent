@@ -1,1 +1,42 @@
-<p>consulta works!</p>
+<div class="col-md-12 pr-12"  >
+  <div class="form-group" >
+    <div class="demo-container">
+      <div id='gridContainer'  >
+
+        <div id="data-grid-demo"  >
+          <dx-data-grid [dataSource]="employees" keyExpr="ID" [showBorders]="true"   >
+            <dxo-filter-row [visible]="showFilterRow" [applyFilter]="currentFilter"  >
+
+            </dxo-filter-row>
+            <dxo-header-filter [visible]="showHeaderFilter"  >
+            </dxo-header-filter >
+            <dxo-search-panel [visible]="true" [width]="240" placeholder="Buscar..."  >
+
+            </dxo-search-panel>
+            <dxo-paging [enabled]="false" ></dxo-paging>
+            <dxo-editing mode="form" [allowAdding]="true" [allowUpdating]="true"   >
+              <dxo-texts saveRowChanges="Guardar" cancelRowChanges="Cancelar" editRow="Editar" >
+              </dxo-texts>
+            </dxo-editing>
+            <dxi-column dataField="Nombre" caption="Nombre"  >
+            </dxi-column>
+            <dxi-column dataField="Capacidad">
+            </dxi-column>
+            <dxi-column dataField="Ubicacion">
+            </dxi-column>
+            <dxi-column dataField="Sectores" [width]="170">
+            </dxi-column>
+            <dxi-column dataField="Nombre"  align="left" [visible]="false">
+            </dxi-column>
+            <dxi-column dataField="Capacidad"  align="right" [visible]="false">
+            </dxi-column>
+            <dxi-column dataField="Estado" editorType="dxSelectBox" [editorOptions]="{ dataSource: countries }">
+            </dxi-column>
+          </dx-data-grid>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
