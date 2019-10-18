@@ -90,21 +90,21 @@ export class ConsultaComponent implements OnInit {
   }];
 
   Estado = [{
-    ID: 1,
+    ID: '1',
     Name: 'Habilitado'
   }, {
-    ID: 2,
+    ID: '2',
     Name: 'Deshabilitado'
   }];
 
   Perfil = [{
-    ID: 1,
+    ID: '1',
     Name: 'Trabajador'
   }, {
-    ID: 2,
+    ID: '2',
     Name: 'Organizador'
   }, {
-    ID: 3,
+    ID: '3',
     Name: 'Administrador'
   }];
 
