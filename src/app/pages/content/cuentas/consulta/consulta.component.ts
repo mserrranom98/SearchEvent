@@ -27,7 +27,7 @@ export class ConsultaComponent implements OnInit {
   }, {
     ID: 3,
     Nombre: 'Greta',
-    Apellido: 'Sims',
+    Apellido: 'Sis',
     Rut: '1-9',
     Correo: 'trabajador@prueba.cl',
     Estado: '1',
