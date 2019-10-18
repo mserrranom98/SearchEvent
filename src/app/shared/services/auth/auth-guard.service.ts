@@ -12,6 +12,7 @@ export class AuthGuardService implements CanActivate {
   ) {}
 
 
+  // @ts-ignore
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     return this.authService.isAuthenticated();
   }

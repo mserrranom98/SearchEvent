@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import number_box from "devextreme/ui/number_box";
 
 @Component({
   selector: 'app-consulta',

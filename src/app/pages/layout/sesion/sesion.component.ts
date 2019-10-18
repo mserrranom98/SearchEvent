@@ -32,8 +32,6 @@ export class SesionComponent implements OnInit {
 
     this.firebaseAuth.auth.signInWithEmailAndPassword(email, password)
       .then(value => {
-        console.log(value);
-        console.log('Nice, it worked!');
         this.router.navigate(['/cuentas/consulta']);
       })
       .catch(error => {
