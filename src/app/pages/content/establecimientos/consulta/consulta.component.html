@@ -14,7 +14,7 @@
 
             </dxo-search-panel>
             <dxo-paging [enabled]="false" ></dxo-paging>
-            <dxo-editing mode="form" [allowAdding]="true" [allowUpdating]="true"   >
+            <dxo-editing mode="form" [allowAdding]="true" [allowUpdating]="true"  >
               <dxo-texts saveRowChanges="Guardar" cancelRowChanges="Cancelar" editRow="Editar" >
               </dxo-texts>
             </dxo-editing>
@@ -24,14 +24,27 @@
             </dxi-column>
             <dxi-column dataField="Ubicacion">
             </dxi-column>
-            <dxi-column dataField="Sectores" [width]="170">
+            <dxi-column dataField="estado"
+                        caption="Estado"
+                        [width]="125">
+              <dxo-lookup
+                [dataSource]="Estado"
+                displayExpr="Name"
+                valueExpr="ID">
+              </dxo-lookup>
             </dxi-column>
-            <dxi-column dataField="Nombre"  align="left" [visible]="false">
-            </dxi-column>
-            <dxi-column dataField="Capacidad"  align="right" [visible]="false">
-            </dxi-column>
-            <dxi-column dataField="Estado" editorType="dxSelectBox" [editorOptions]="{ dataSource: countries }">
-            </dxi-column>
+
+
+            <div *dxTemplate="let employees of 'detail'">
+              <dx-data-grid
+                [dataSource]="employees" keyExpr="ID"
+                [showBorders]="true"
+                [columnAutoWidth]="true">
+                <dxi-column dataField="NombreS"></dxi-column>
+                <dxi-column dataField="CapacidadS" ></dxi-column>
+              </dx-data-grid>
+            </div>
+
           </dx-data-grid>
         </div>
       </div>

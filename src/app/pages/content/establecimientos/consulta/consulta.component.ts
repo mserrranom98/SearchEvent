@@ -15,6 +15,8 @@ export class ConsultaComponent implements OnInit {
     Estado: 'Activo',
     Contraseña: '1234',
     Perfil: 'Organizador',
+    NombreS: 'John',
+    CapacidadS: 'Heart',
   }, {
     ID: 2,
     Nombre: 'Robert',
@@ -24,6 +26,8 @@ export class ConsultaComponent implements OnInit {
     Estado: 'Deshabilitado',
     Contraseña: '1234',
     Perfil: 'Trabajador',
+    NombreC: 'John',
+    Capacidad: 'Heart',
   }, {
     ID: 3,
     FirstName: 'Robert',
@@ -277,7 +281,18 @@ export class ConsultaComponent implements OnInit {
     Name: 'North Dakota'
   }];
 
+
+
+  Estado = [{
+    ID: '1',
+    Name: 'Habilitado'
+  }, {
+    ID: '2',
+    Name: 'Deshabilitado'
+  }];
+
   constructor() {
+
   }
 
   ngOnInit() {
