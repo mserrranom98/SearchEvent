@@ -2,6 +2,11 @@
 
 }
 
+.div-table {
+  background-color: white;
+  padding: 10px;
+}
+
 .buscar{
 text-align: right;
 }

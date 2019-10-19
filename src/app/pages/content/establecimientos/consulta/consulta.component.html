@@ -2,8 +2,8 @@
   <div class="form-group" >
     <div class="demo-container">
       <div id='gridContainer'  >
-
-
+    <div>
+      <div id="data-grid-demo">
           <dx-data-grid [dataSource]="employees" keyExpr="ID" [showBorders]="true"
                         [masterDetail]="{ enabled: true, template: 'detail' }">
             <dxo-filter-row [visible]="true">
@@ -50,6 +50,7 @@
             </div>
 
           </dx-data-grid>
+      </div>
         </div>
       </div>
     </div>
