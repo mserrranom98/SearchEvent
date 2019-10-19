@@ -2,7 +2,7 @@
   <div class="form-group" >
     <div class="demo-container">
       <div id='gridContainer' >
-        <mat-card>
+        <div>
           <dx-data-grid [dataSource]="employees" keyExpr="ID" [showBorders]="true"
                         [masterDetail]="{ enabled: true, template: 'detail' }">
             <dxo-filter-row [visible]="true">
@@ -49,7 +49,7 @@
             </div>
 
           </dx-data-grid>
-        </mat-card>
+        </div>
       </div>
     </div>
   </div>
