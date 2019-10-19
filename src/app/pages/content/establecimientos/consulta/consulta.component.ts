@@ -14,6 +14,10 @@ export class ConsultaComponent implements OnInit {
     Correo: 'admin@prueba.cl',
     Estado: 'Activo',
     Contraseña: '1234',
+    sectores: [
+      {ID: 1, nombre: 'hola'},
+      {ID: 1, nombre: 'hola'},
+    ],
     Perfil: 'Organizador',
     NombreS: 'John',
     CapacidadS: 'Heart',
@@ -24,6 +28,10 @@ export class ConsultaComponent implements OnInit {
     Rut: '1-9',
     Correo: 'trabajador@prueba.cl',
     Estado: 'Deshabilitado',
+    sectores: [
+      {ID: 1, nombre: 'hola'},
+      {ID: 1, nombre: 'hola'},
+    ],
     Contraseña: '1234',
     Perfil: 'Trabajador',
     NombreC: 'John',

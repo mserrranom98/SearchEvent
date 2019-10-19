@@ -4,11 +4,12 @@
       <div id='gridContainer'  >
 
         <div id="data-grid-demo"  >
-          <dx-data-grid [dataSource]="employees" keyExpr="ID" [showBorders]="true"   >
-            <dxo-filter-row [visible]="showFilterRow" [applyFilter]="currentFilter"  >
+          <dx-data-grid [dataSource]="employees" keyExpr="ID" [showBorders]="true"
+                        [masterDetail]="{ enabled: true, template: 'detail' }">
+            <dxo-filter-row [visible]="true">
 
             </dxo-filter-row>
-            <dxo-header-filter [visible]="showHeaderFilter"  >
+            <dxo-header-filter [visible]="true" >
             </dxo-header-filter >
             <dxo-search-panel [visible]="true" [width]="240" placeholder="Buscar..."  >
 
@@ -37,11 +38,10 @@
 
             <div *dxTemplate="let employees of 'detail'">
               <dx-data-grid
-                [dataSource]="employees" keyExpr="ID"
+                [dataSource]="employees.data.sectores" keyExpr="ID"
                 [showBorders]="true"
                 [columnAutoWidth]="true">
-                <dxi-column dataField="NombreS"></dxi-column>
-                <dxi-column dataField="CapacidadS" ></dxi-column>
+                <dxi-column dataField="nombre"></dxi-column>
               </dx-data-grid>
             </div>
 
