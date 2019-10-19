@@ -25,7 +25,7 @@
             </dxi-column>
             <dxi-column dataField="Ubicacion">
             </dxi-column>
-            <dxi-column dataField="estado"
+            <dxi-column dataField="Estado"
                         caption="Estado"
                         [width]="125">
               <dxo-lookup
@@ -35,13 +35,17 @@
               </dxo-lookup>
             </dxi-column>
 
-
             <div *dxTemplate="let employees of 'detail'">
               <dx-data-grid
                 [dataSource]="employees.data.sectores" keyExpr="ID"
                 [showBorders]="true"
                 [columnAutoWidth]="true">
-                <dxi-column dataField="nombre"></dxi-column>
+                <dxo-editing mode="form" [allowAdding]="true" [allowUpdating]="true"  >
+                  <dxo-texts saveRowChanges="Guardar" cancelRowChanges="Cancelar" editRow="Editar" >
+                  </dxo-texts>
+                </dxo-editing>
+                <dxi-column dataField="Nombre"></dxi-column>
+                <dxi-column dataField="Capacidad"></dxi-column>
               </dx-data-grid>
             </div>
 
