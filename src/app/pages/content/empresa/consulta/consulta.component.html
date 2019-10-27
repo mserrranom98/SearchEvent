@@ -1,36 +1,74 @@
 <div class="col-md-12 pr-12"  >
   <div class="form-group" >
-    <div class="demo-container">
-      <div id='gridContainer'  >
-        <div id="data-grid-demo"  >
           <dx-form id="form"
                    [formData]="employees">
             <dxi-item itemType="group" cssClass="first-group" [colCount]="4">
               <dxi-item>
-                <div class="form-avatar"></div>
+                <div cssClass="form-avatar">
+                  <img src="../assets/img/logo-small.png">
+                </div>
               </dxi-item>
               <dxi-item itemType="group" [colSpan]="3">
-                <dxi-item dataField="FirstName"></dxi-item>
-                <dxi-item dataField="LastName"></dxi-item>
-                <dxi-item dataField="BirthDate" editorType="dxDateBox" [editorOptions]="{ width: '100%'}"></dxi-item>
+                <dxi-item dataField="Nombre" [disabled]="true"></dxi-item>
+                <dxi-item dataField="Ocupación" [disabled]="true"></dxi-item>
+                <dxi-item dataField="Correo" [disabled]="true"></dxi-item>
               </dxi-item>
             </dxi-item>
             <dxi-item itemType="group" cssClass="second-group" [colCount]="2">
               <dxi-item itemType="group">
-                <dxi-item dataField="Address"></dxi-item>
-                <dxi-item dataField="City"></dxi-item>
+                <dxi-item dataField="Direccion" [disabled]="true"></dxi-item>
+                <dxi-item dataField="Cuidad" [disabled]="true"></dxi-item>
 
               </dxi-item>
               <dxi-item itemType="group">
-                <dxi-item dataField="State" editorType="dxSelectBox" [editorOptions]="{ items: states }"></dxi-item>
-                <dxi-item dataField="ZipCode"></dxi-item>
-                <dxi-item dataField="Mobile" [label]="{text: 'Phone'}" [editorOptions]="{ mask: '+1 (000) 000-0000'}"></dxi-item>
+                <dxi-item dataField="Region" editorType="dxSelectBox" [editorOptions]="{ items: states }" [disabled]="true"></dxi-item>
+                <dxi-item dataField="Telefono" [label]="{text: 'Telefono'}" [editorOptions]="{ mask: '+56 900000000'}" [disabled]="true"></dxi-item>
               </dxi-item>
-              <dxi-item dataField="Notes" [colSpan]="2" editorType="dxTextArea" [editorOptions]="{ height: 140 }"></dxi-item>
+              <dxi-item dataField="Descripcion" [colSpan]="2" editorType="dxTextArea" [editorOptions]="{ height: 140 }" [disabled]="true"></dxi-item>
+            </dxi-item>
+            <dxi-item itemType="group">
+              <dx-button
+                class="button-info"
+                text="Editar"
+                (onClick)="showInfo(employee)">
+              </dx-button>
             </dxi-item>
           </dx-form>
-        </div>
+    <dx-popup
+      class="popup"
+      [width]="300"
+      [height]="250"
+      [showTitle]="true"
+      title="Information"
+      [dragEnabled]="false"
+      [closeOnOutsideClick]="true"
+      [(visible)]="popupVisible">
+      <div *dxTemplate="let data of 'content'">
+        <dxi-item itemType="group" cssClass="first-group" [colCount]="4">
+          <dxi-item>
+            <div cssClass="form-avatar">
+              <img src="../assets/img/logo-small.png">
+            </div>
+          </dxi-item>
+          <dxi-item itemType="group" [colSpan]="3">
+            <dxi-item dataField="Nombre" [disabled]="true"></dxi-item>
+            <dxi-item dataField="Ocupación" [disabled]="true"></dxi-item>
+            <dxi-item dataField="Correo" [disabled]="true"></dxi-item>
+          </dxi-item>
+        </dxi-item>
+        <dxi-item itemType="group" cssClass="second-group" [colCount]="2">
+          <dxi-item itemType="group">
+            <dxi-item dataField="Direccion" [disabled]="true"></dxi-item>
+            <dxi-item dataField="Cuidad" [disabled]="true"></dxi-item>
+
+          </dxi-item>
+          <dxi-item itemType="group">
+            <dxi-item dataField="Region" editorType="dxSelectBox" [editorOptions]="{ items: states }" [disabled]="true"></dxi-item>
+            <dxi-item dataField="Telefono" [label]="{text: 'Telefono'}" [editorOptions]="{ mask: '+56 900000000'}" [disabled]="true"></dxi-item>
+          </dxi-item>
+          <dxi-item dataField="Descripcion" [colSpan]="2" editorType="dxTextArea" [editorOptions]="{ height: 140 }" [disabled]="true"></dxi-item>
+        </dxi-item>
       </div>
-    </div>
+    </dx-popup>
   </div>
 </div>

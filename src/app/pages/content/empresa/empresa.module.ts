@@ -3,7 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { EmpresaRoutingModule } from './empresa-routing.module';
 import {ConsultaComponent} from './consulta/consulta.component';
-import {DxDateBoxModule, DxFormModule, DxSelectBoxModule, DxTextAreaModule} from "devextreme-angular";
+import {
+  DxButtonModule,
+  DxDateBoxModule,
+  DxFormModule,
+  DxPopupModule,
+  DxSelectBoxModule, DxTemplateModule,
+  DxTextAreaModule
+} from "devextreme-angular";
 
 
 @NgModule({
@@ -16,7 +23,10 @@ import {DxDateBoxModule, DxFormModule, DxSelectBoxModule, DxTextAreaModule} from
     DxSelectBoxModule,
     DxTextAreaModule,
     DxDateBoxModule,
-    DxFormModule
+    DxFormModule,
+    DxPopupModule,
+    DxTemplateModule,
+    DxButtonModule
   ]
 })
 export class EmpresaModule { }
