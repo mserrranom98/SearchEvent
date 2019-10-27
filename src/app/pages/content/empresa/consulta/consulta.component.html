@@ -30,7 +30,7 @@
               <dx-button
                 class="button-info"
                 text="Editar"
-                (onClick)="showInfo(employee)">
+                (onClick)="solicitudUpdate()">
               </dx-button>
             </dxi-item>
           </dx-form>
@@ -44,30 +44,7 @@
       [closeOnOutsideClick]="true"
       [(visible)]="popupVisible">
       <div *dxTemplate="let data of 'content'">
-        <dxi-item itemType="group" cssClass="first-group" [colCount]="4">
-          <dxi-item>
-            <div cssClass="form-avatar">
-              <img src="../assets/img/logo-small.png">
-            </div>
-          </dxi-item>
-          <dxi-item itemType="group" [colSpan]="3">
-            <dxi-item dataField="Nombre" [disabled]="true"></dxi-item>
-            <dxi-item dataField="Ocupación" [disabled]="true"></dxi-item>
-            <dxi-item dataField="Correo" [disabled]="true"></dxi-item>
-          </dxi-item>
-        </dxi-item>
-        <dxi-item itemType="group" cssClass="second-group" [colCount]="2">
-          <dxi-item itemType="group">
-            <dxi-item dataField="Direccion" [disabled]="true"></dxi-item>
-            <dxi-item dataField="Cuidad" [disabled]="true"></dxi-item>
-
-          </dxi-item>
-          <dxi-item itemType="group">
-            <dxi-item dataField="Region" editorType="dxSelectBox" [editorOptions]="{ items: states }" [disabled]="true"></dxi-item>
-            <dxi-item dataField="Telefono" [label]="{text: 'Telefono'}" [editorOptions]="{ mask: '+56 900000000'}" [disabled]="true"></dxi-item>
-          </dxi-item>
-          <dxi-item dataField="Descripcion" [colSpan]="2" editorType="dxTextArea" [editorOptions]="{ height: 140 }" [disabled]="true"></dxi-item>
-        </dxi-item>
+        Aqui hay un popup
       </div>
     </dx-popup>
   </div>
