@@ -17,3 +17,8 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+
+.div-fondo{
+  background-color: white;
+  padding: 30px;
+}
