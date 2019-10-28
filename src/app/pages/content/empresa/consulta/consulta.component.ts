@@ -289,4 +289,6 @@ export class ConsultaComponent implements OnInit {
     this.popupVisible = true;
   }
 
+  prueba(){}
+
 }
