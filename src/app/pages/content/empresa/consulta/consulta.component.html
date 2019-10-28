@@ -46,8 +46,8 @@
     </dx-form>
     <dx-popup
       class="popup"
-      [width]="300"
-      [height]="250"
+      [width]="800"
+      [height]="400"
       [showTitle]="true"
       title="Enviar mensaje a administrador"
       [dragEnabled]="false"
@@ -55,12 +55,12 @@
       [(visible)]="popupVisible">
       <div *dxTemplate="let data of 'content'">
         <div class="form-group">
-          <dxi-item itemType="group" cssClass="first-group" [colCount]="4">
-            <dxi-item itemType="group" [colSpan]="3">
-              <dxi-item dataField="Asunto" [disabled]="true"></dxi-item>
+          <dx-form id="form"
+                   [formData]="employees">
+          <dxi-item itemType="group">
+              <dxi-item dataField="Asunto"></dxi-item>
               <dxi-item dataField="Descripcion" [colSpan]="2" editorType="dxTextArea"
                         [editorOptions]="{ height: 140 }"></dxi-item>
-            </dxi-item>
           </dxi-item>
           <dxi-item itemType="group">
             <dx-button
@@ -69,8 +69,11 @@
               (onClick)="prueba()">
             </dx-button>
           </dxi-item>
+          </dx-form>
         </div>
+
       </div>
+
     </dx-popup>
   </div>
 </div>
