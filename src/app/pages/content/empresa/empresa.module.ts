@@ -5,7 +5,7 @@ import { EmpresaRoutingModule } from './empresa-routing.module';
 import {ConsultaComponent} from './consulta/consulta.component';
 import {
   DxButtonModule,
-  DxDateBoxModule,
+  DxDateBoxModule, DxFileUploaderModule,
   DxFormModule,
   DxPopupModule,
   DxSelectBoxModule, DxTemplateModule,
@@ -26,7 +26,8 @@ import {
     DxFormModule,
     DxPopupModule,
     DxTemplateModule,
-    DxButtonModule
+    DxButtonModule,
+    DxFileUploaderModule
   ]
 })
 export class EmpresaModule { }

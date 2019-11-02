@@ -7,7 +7,14 @@
         <dxi-item>
           <div cssClass="form-avatar">
             <img src="../assets/img/logo-small.png">
-          </div>
+          </div><br><br>
+          <dxi-item itemType="group">
+            <dx-button
+              class="button-info"
+              text="Modificar logo"
+              (onClick)="modificarLogo()">
+            </dx-button>
+          </dxi-item>
         </dxi-item>
         <dxi-item itemType="group" [colSpan]="3">
           <dxi-item dataField="Nombre" [disabled]="true"></dxi-item>
@@ -37,8 +44,6 @@
           text="Enviar mensaje"
           (onClick)="solicitudUpdate()">
         </dx-button>
-      </dxi-item>
-      <dxi-item itemType="group">
         <dx-button
           class="button-info"
           text="Guardar">
@@ -76,5 +81,41 @@
       </div>
 
     </dx-popup>
+      <dx-popup
+        class="popup"
+        [width]="800"
+        [height]="400"
+        [showTitle]="true"
+        title="Añadir imagen"
+        [dragEnabled]="false"
+        [closeOnOutsideClick]="true"
+        [(visible)]="popupVisible1">
+        <div *dxTemplate="let data of 'content'">
+          <div class="form-group">
+            <dx-form id="form"
+                     [formData]="employees">
+              <dxi-item itemType="group">
+              <div id="fileuploader-container">
+                <dx-file-uploader
+                  selectButtonText="Seleccionar imagen"
+                  labelText=""
+                  accept="image/*"
+                  uploadMode="useForm">
+                </dx-file-uploader>
+              </div>
+              </dxi-item>
+              <dxi-item itemType="group">
+                <dx-button
+                  class="button-info"
+                  text="Guardar "
+                  (onClick)="prueba()">
+                </dx-button>
+              </dxi-item>
+            </dx-form>
+          </div>
+
+        </div>
+
+      </dx-popup>
   </div>
 </div>
