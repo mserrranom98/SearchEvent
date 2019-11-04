@@ -16,22 +16,10 @@
   </div>
   <div class="sidebar-wrapper">
     <ul class="nav">
-      <li class="active ">
-        <a routerLink="/Cuentas">
-          <i class="nc-icon nc-single-02"></i>
-          <p>Cuentas</p>
-        </a>
-      </li>
-      <li>
-        <a routerLink="/Establecimientos">
-          <i class="nc-icon nc-bank"></i>
-          <p>Establecimientos</p>
-        </a>
-      </li>
-      <li>
-        <a routerLink="/Empresa">
-          <i class="nc-icon nc-briefcase-24"></i>
-          <p>Empresa</p>
+      <li *ngFor="let menu of menus"  [class]="menu.orden === 0 ? 'active' : ''">
+        <a [routerLink]="menu.path">
+          <i [class]="menu.icono"></i>
+          <p>{{menu.nombre}}</p>
         </a>
       </li>
     </ul>

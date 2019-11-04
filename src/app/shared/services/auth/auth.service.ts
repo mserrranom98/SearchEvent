@@ -20,7 +20,6 @@ export class AuthService {
 
   isAuthenticated() {
     const idToken = localStorage.getItem('token');
-    console.log(idToken);
     const body = {
       idToken
     };

@@ -22,7 +22,7 @@ firebase.initializeApp(environment.firebase);
   declarations: [
     AppComponent,
     MainComponent,
-    SesionComponent,
+    SesionComponent
   ],
   imports: [
     HttpClientModule,
