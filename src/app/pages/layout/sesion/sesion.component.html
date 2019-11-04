@@ -1,6 +1,6 @@
 <div class="wrapper " align="center">
 
-  <form [formGroup]="formUsuario" (ngSubmit)="login()"  class="logoL">
+  <form [formGroup]="formUsuario"  class="logoL">
     <a href="#" class="simple-text logo-mini">
       <div class="logo-image-small">
         <img src="../assets/img/logo-small.png">
@@ -22,7 +22,7 @@
 
     <div class="row">
       <div class="update ml-auto mr-auto">
-        <button type="submit" class="btn btn-warning btn-round">Ingresar</button>
+        <button type="submit" class="btn btn-warning btn-round" (click)="login()">Ingresar</button>
       </div>
     </div><br>
 

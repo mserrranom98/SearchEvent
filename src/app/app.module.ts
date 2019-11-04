@@ -14,7 +14,9 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
 import {environment} from '../environments/environment';
 import {AuthGuardService} from './shared/services/auth/auth-guard.service';
 
+import * as firebase from 'firebase';
 
+firebase.initializeApp(environment.firebase);
 
 @NgModule({
   declarations: [

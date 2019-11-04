@@ -33,12 +33,20 @@ export class SesionComponent implements OnInit {
 
     this.firebaseAuth.auth.signInWithEmailAndPassword(email, password)
       .then(value => {
-        console.log(value);
+        this.getToken();
         this.router.navigate(['/cuentas/consulta'], {relativeTo: this.route.parent});
       })
       .catch(error => {
         console.log('Something went wrong:', error.message);
       });
+  }
+
+  getToken() {
+    firebase.auth().currentUser.getIdToken(true).then((idToken: string) => {
+      localStorage.setItem('token', idToken);
+    }).catch(error => {
+      console.log(error);
+    });
   }
 
 }

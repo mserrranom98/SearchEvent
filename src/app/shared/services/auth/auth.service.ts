@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import * as firebase from 'firebase/app';
 import {HttpClient} from '@angular/common/http';
 import {GLOBAL_PATH} from '../../models/path/path';
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +19,23 @@ export class AuthService {
   }
 
   isAuthenticated() {
+    const idToken = localStorage.getItem('token');
+    console.log(idToken);
+    const body = {
+      idToken
+    };
+
+    this.http.post(this.path + 'verificarToken', body).subscribe((res: any) => {
+      if (res.code !== '0') {
+        this.router.navigate(['/login'], { relativeTo: this.route.parent });
+      }
+    }, error => {
+      console.log(error);
+      this.router.navigate(['/login'], { relativeTo: this.route.parent });
+    });
+
     return true;
+
     /*firebase.auth().currentUser.getIdToken(true).then((idToken: string) => {
       const body = {
         idToken
@@ -42,15 +58,5 @@ export class AuthService {
       this.router.navigate(['/login'], { relativeTo: this.route.parent });
       return false;
     });*/
-  }
-
-  getToken() {
-    firebase.auth().currentUser.getIdToken(true).then((idToken: string) => {
-      console.log(idToken);
-      return idToken;
-    }).catch(error => {
-      console.log(error);
-    });
-
   }
 }
