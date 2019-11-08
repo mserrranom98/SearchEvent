@@ -5,7 +5,12 @@
       <div class="div-table">
 
         <div id="data-grid-demo">
-          <dx-data-grid id="tableCuentas" [dataSource]="employees" keyExpr="ID" [showBorders]="true">
+          <dx-data-grid id="tableCuentas"
+                        [dataSource]="trabajadores" [showBorders]="true"
+                        (onRowUpdated)="updateTrabajador($event)"
+                        (onRowInserted)="addTrabajador($event)"
+                        (onRowValidating)="validarTrabajador($event)"
+                        (onEditorPreparing)="onEditorPreparing($event)">
             <dxo-header-filter [visible]="true">
             </dxo-header-filter>
             <dxo-search-panel [visible]="true" [width]="240" placeholder="Buscar...">
@@ -16,34 +21,33 @@
               <dxo-texts saveRowChanges="Guardar" cancelRowChanges="Cancelar" editRow="Editar">
               </dxo-texts>
             </dxo-editing>
-            <dxi-column dataField="Rut" caption="Rut" [width]="70">
+            <dxi-column dataField="id" caption="ID" [visible]="false" [formItem]="{visible: false}">
             </dxi-column>
-            <dxi-column dataField="Nombre">
+            <dxi-column dataField="rut" caption="Rut">
+              <dxi-validation-rule type="required" message="El numero de cuenta es requerido"></dxi-validation-rule>
+              <dxi-validation-rule type="stringLength" [min]="10" message="Numero de caracteres: 10 al 13"></dxi-validation-rule>
             </dxi-column>
-            <dxi-column dataField="Apellido">
+            <dxi-column dataField="nombres" caption="Nombres">
+              <dxi-validation-rule type="required" message="El nombre es requerido"></dxi-validation-rule>
+              <dxi-validation-rule type="stringLength" [min]="10" message="Numero de caracteres: 10 al 13"></dxi-validation-rule>
             </dxi-column>
-            <dxi-column dataField="Correo" [width]="170">
+            <dxi-column dataField="apellidos" caption="Apellidos">
+              <dxi-validation-rule type="required" message="Los apellidos son requeridos"></dxi-validation-rule>
+              <dxi-validation-rule type="pattern" [min]="10" message="Numero de caracteres: 10 al 13"></dxi-validation-rule>
             </dxi-column>
-            <dxi-column dataField="estado"
-                        caption="Estado"
-                        [width]="125">
-              <dxo-lookup
-                [dataSource]="Estado"
-                displayExpr="Name"
-                valueExpr="ID">
+            <dxi-column dataField="correo" caption="Correo">
+              <dxi-validation-rule type="required" message="El correo es requerido"></dxi-validation-rule>
+              <dxi-validation-rule type="email" message="El formato del correo no es valido"></dxi-validation-rule>
+            </dxi-column>
+            <dxi-column dataField="estado" caption="Estado">
+              <dxi-validation-rule type="required" message="El estado es requerido"></dxi-validation-rule>
+              <dxo-lookup [dataSource]="estados" displayExpr="value" valueExpr="id">
               </dxo-lookup>
             </dxi-column>
-            <dxi-column dataField="Perfil"
-                        caption="Perfil"
-                        [width]="125">
-              <dxo-lookup
-                [dataSource]="Perfil"
-                displayExpr="Name"
-                valueExpr="ID">
+            <dxi-column dataField="perfil" caption="Perfil">
+              <dxi-validation-rule type="required" message="El perfil es requerido"></dxi-validation-rule>
+              <dxo-lookup [dataSource]="perfiles" displayExpr="nombre" valueExpr="id">
               </dxo-lookup>
-              >
-            </dxi-column>
-            <dxi-column dataField="Contraseña" [visible]="false" [editorOptions]="{ mode: 'password' }">
             </dxi-column>
           </dx-data-grid>
         </div>

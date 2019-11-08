@@ -31,18 +31,20 @@ export class SesionComponent implements OnInit {
     const email = this.formUsuario.getRawValue().email;
     const password = this.formUsuario.getRawValue().password;
 
-    this.firebaseAuth.auth.signInWithEmailAndPassword(email, password)
-      .then(value => {
-        this.getToken();
-        this.router.navigate(['/cuentas/consulta'], {relativeTo: this.route.parent});
-      })
-      .catch(error => {
-        console.log('Something went wrong:', error.message);
-      });
+    console.log('INICIO DE SESION:');
+    this.firebaseAuth.auth.signInWithEmailAndPassword(email, password).then(value => {
+      console.log('Ingreso al sistema exitoso');
+      this.getToken();
+      this.router.navigate(['/cuentas/consulta'], {relativeTo: this.route.parent});
+    }).catch(error => {
+      console.log(error.message);
+    });
   }
 
   getToken() {
+    console.log('INICIO DE CONSULTA DE TOKEN');
     firebase.auth().currentUser.getIdToken(true).then((idToken: string) => {
+      console.log('Se recupero exitosamente el token');
       localStorage.setItem('token', idToken);
     }).catch(error => {
       console.log(error);

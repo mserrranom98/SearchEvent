@@ -1,4 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import {Trabajadores} from '../../../../shared/models/trabajadores/trabajadores.model';
+import {TrabajadoresService} from '../../../../shared/services/trabajadores/trabajadores.service';
+import {PerfilesService} from '../../../../shared/services/perfiles/perfiles.service';
 
 @Component({
   selector: 'app-consulta',
@@ -6,112 +9,90 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ConsultaComponent implements OnInit {
 
-  employees = [{
-    ID: 1,
-    Nombre: 'John',
-    Apellido: 'Heart',
-    Rut: '1-9',
-    Correo: 'admin@prueba.cl',
-    Estado: '1',
-    Contraseña: '1234',
-    Perfil: '3',
-  }, {
-    ID: 2,
-    Nombre: 'Robert',
-    Apellido: 'Reagan',
-    Rut: '1-9',
-    Correo: 'trabajador@prueba.cl',
-    Estado: '2',
-    Contraseña: '1234',
-    Perfil: '1',
-  }, {
-    ID: 3,
-    Nombre: 'Greta',
-    Apellido: 'Sis',
-    Rut: '1-9',
-    Correo: 'trabajador@prueba.cl',
-    Estado: '1',
-    Contraseña: '1234',
-    Perfil: '1',
-  }, {
-    ID: 4,
-    Nombre: 'Brett',
-    Apellido: 'Wade',
-    Rut: '1-9',
-    Correo: 'admin@prueba.cl',
-    Estado: '1',
-    Contraseña: '1234',
-    Perfil: '3',
-  }, {
-    ID: 5,
-    Nombre: 'Sandra',
-    Apellido: 'Johnson',
-    Rut: '1-9',
-    Correo: 'organizador@prueba.cl',
-    Estado: '1',
-    Contraseña: '1234',
-    Perfil: '2',
-  }, {
-    ID: 6,
-    Nombre: 'Kevin',
-    Apellido: 'Carter',
-    Rut: '1-9',
-    Correo: 'trabajador@prueba.cl',
-    Estado: '2',
-    Contraseña: '1234',
-    Perfil: '3',
-  }, {
-    ID: 7,
-    Nombre: 'Cynthia',
-    Apellido: 'Stanwick',
-    Rut: '1-9',
-    Correo: 'trabajador@prueba.cl',
-    Estado: '1',
-    Contraseña: '1234',
-    Perfil: '3',
-  }, {
-    ID: 8,
-    Nombre: 'Kent',
-    Apellido: 'Samuelson',
-    Rut: '1-9',
-    Correo: 'trabajador@prueba.cl',
-    Estado: '1',
-    Contraseña: '1234',
-    Perfil: '3',
-  }, {
-    ID: 9,
-    Nombre: 'Taylor',
-    Apellido: 'Riley',
-    Rut: '1-9',
-    Correo: 'trabajador@prueba.cl',
-    Estado: '1',
-    Contraseña: '1234',
-    Perfil: '3',
-  }];
+  private token: string;
+  trabajadores: Trabajadores[] = [];
+  estados = [
+    {value: 'Habilitado', id: true},
+    {value: 'Deshabilitado', id: false}
+  ];
+  perfiles = [];
 
-  Estado = [{
-    ID: '1',
-    Name: 'Habilitado'
-  }, {
-    ID: '2',
-    Name: 'Deshabilitado'
-  }];
-
-  Perfil = [{
-    ID: '1',
-    Name: 'Trabajador'
-  }, {
-    ID: '2',
-    Name: 'Organizador'
-  }, {
-    ID: '3',
-    Name: 'Administrador'
-  }];
-
-  constructor() {
+  constructor(
+    private trabajadoresService: TrabajadoresService,
+    private perfilesService: PerfilesService
+  ) {
+    this.token = localStorage.getItem('token');
   }
 
   ngOnInit() {
+    this.getTrabajadores();
+  }
+
+  getTrabajadores() {
+    console.log('INICIO DE CONSULTA DE TRABAJADORES:');
+    this.trabajadoresService.getTrabajadores(this.token).subscribe((response: any) => {
+      console.log(response);
+      if (response.code === '0') {
+        this.trabajadores = response.trabajadores;
+        this.getPerfiles();
+      }
+      console.log(response.message);
+    }, error => {
+      console.log(error);
+    });
+  }
+
+  getPerfiles() {
+    console.log('INICIO DE CONSULTA DE PERFILES:');
+    this.perfilesService.getPerfilesActivo(this.token).subscribe((response: any) => {
+      if (response.code === '0') {
+        this.perfiles = response.perfiles;
+      }
+      console.log(response.message);
+    }, error => {
+      console.log(error);
+    });
+  }
+
+  updateTrabajador(event) {
+    console.log('INICIO DE ACTUALIZACION DE TRABAJADOR:');
+    this.trabajadoresService.updateTrabajador(this.token, event.data).subscribe((response: any) => {
+      console.log(response.message);
+    }, error => {
+      console.log(error);
+    });
+  }
+
+  validarTrabajador(e) {
+    if (e.isValid && this.trabajadores.filter((item) => item.rut === e.newData.rut).length > 0) {
+      e.isValid = false;
+      e.errorText = 'El rut del trabajador ya existe';
+    }
+  }
+
+  addTrabajador(event) {
+    console.log('INICIO DE CREACION DE TRABAJADOR:');
+    this.trabajadoresService.addTrabajador(this.token, event.data).subscribe((response: any) => {
+      console.log(response.message);
+    }, error => {
+      console.log(error);
+    });
+  }
+
+  changePassword(event) {
+    console.log('INICIO DE ACTUALIZACION DE CONTRASEÑA:');
+    this.trabajadoresService.chagePassword(this.token, event.data).subscribe((response: any) => {
+      console.log(response.message);
+    }, error => {
+      console.log(error);
+    });
+  }
+
+  onEditorPreparing(e) {
+    if (e.row.inserted && e.dataField === 'estado') {
+      e.editorOptions.value = true;
+      e.editorOptions.disabled = true;
+    }
   }
 
 }

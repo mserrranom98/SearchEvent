@@ -21,7 +21,9 @@ export class SidebarComponent implements OnInit {
   }
   
   getMenus() {
+    console.log('INICIO DE CONSULTA DE MODULOS');
     this.menusService.getMenus(this.token).subscribe((response: any) => {
+      console.log(response.message);
       // tslint:disable-next-line:only-arrow-functions
       this.menus = response.menus.sort(function(a, b) {
         if (a.orden > b.orden) {

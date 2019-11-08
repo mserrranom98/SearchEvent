@@ -1,11 +1,10 @@
-import {Items} from '../items/items.model';
-
 export class Trabajadores {
 
+  id: string;
   apellidos: string;
   correo: string;
   nombres: string;
-  perfil: Items[];
+  perfil: string;
   rut: number;
 
 }

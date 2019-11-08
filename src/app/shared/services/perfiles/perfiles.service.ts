@@ -5,7 +5,7 @@ import {HttpClient} from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class MenusService {
+export class PerfilesService {
 
   private path = GLOBAL_PATH.getPath;
 
@@ -13,12 +13,11 @@ export class MenusService {
     private http: HttpClient
   ) { }
 
-  getMenus(idToken: string) {
+  getPerfilesActivo(idToken: string) {
     const body = {
       idToken
     };
 
-    return this.http.post(this.path + 'getPath', body);
+    return this.http.post(this.path + 'getPerfilesActivo', body);
   }
-
 }
