@@ -49,6 +49,10 @@
               <dxo-lookup [dataSource]="perfiles" displayExpr="nombre" valueExpr="id">
               </dxo-lookup>
             </dxi-column>
+            <dxi-column dataField="changePassword" caption="Cambiar Contraseña" alignment="center" [allowFiltering]="false" [allowSorting]="false" cellTemplate="password"></dxi-column>
+            <div *dxTemplate="let data of 'password'">
+              <i class="dx-link dx-link-search dx-icon-search" title="Cambiar Contraseña" (click)="openChangePassword(data)"></i>
+            </div>
           </dx-data-grid>
         </div>
       </div>

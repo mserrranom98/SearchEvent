@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Trabajadores} from '../../../../shared/models/trabajadores/trabajadores.model';
 import {TrabajadoresService} from '../../../../shared/services/trabajadores/trabajadores.service';
 import {PerfilesService} from '../../../../shared/services/perfiles/perfiles.service';
+import {MatDialog} from '@angular/material';
+import {ChangePasswordComponent} from '../change-password/change-password.component';
 
 @Component({
   selector: 'app-consulta',
@@ -19,6 +21,7 @@ export class ConsultaComponent implements OnInit {
 
   constructor(
     private trabajadoresService: TrabajadoresService,
+    public dialog: MatDialog,
     private perfilesService: PerfilesService
   ) {
     this.token = localStorage.getItem('token');
@@ -72,13 +75,8 @@ export class ConsultaComponent implements OnInit {
     });
   }
 
-  changePassword(event) {
-    console.log('INICIO DE ACTUALIZACION DE CONTRASEÑA:');
-    this.trabajadoresService.chagePassword(this.token, event.data).subscribe((response: any) => {
-      console.log(response.message);
-    }, error => {
-      console.log(error);
-    });
+  openChangePassword(event) {
+    this.dialog.open(ChangePasswordComponent, {data: event.data});
   }
 
   validarTrabajador(e) {
