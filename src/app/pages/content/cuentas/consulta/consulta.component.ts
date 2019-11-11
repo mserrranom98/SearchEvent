@@ -63,13 +63,6 @@ export class ConsultaComponent implements OnInit {
     });
   }
 
-  validarTrabajador(e) {
-    if (e.isValid && this.trabajadores.filter((item) => item.rut === e.newData.rut).length > 0) {
-      e.isValid = false;
-      e.errorText = 'El rut del trabajador ya existe';
-    }
-  }
-
   addTrabajador(event) {
     console.log('INICIO DE CREACION DE TRABAJADOR:');
     this.trabajadoresService.addTrabajador(this.token, event.data).subscribe((response: any) => {
@@ -86,6 +79,13 @@ export class ConsultaComponent implements OnInit {
     }, error => {
       console.log(error);
     });
+  }
+
+  validarTrabajador(e) {
+    if (e.isValid && this.trabajadores.filter((item) => item.rut === e.newData.rut).length > 0) {
+      e.isValid = false;
+      e.errorText = 'El rut del trabajador ya existe';
+    }
   }
 
   onEditorPreparing(e) {
