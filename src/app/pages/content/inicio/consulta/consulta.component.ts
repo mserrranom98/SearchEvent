@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-consulta',
-  templateUrl: './consulta.component.html',
-  styleUrls: ['./consulta.component.css']
+  templateUrl: './consulta.component.html'
 })
 export class ConsultaComponent implements OnInit {
 
