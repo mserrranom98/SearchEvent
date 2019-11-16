@@ -6,6 +6,8 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ConsultaComponent implements OnInit {
 
+  popupVisible = false;
+
   employees = [{
     ID: 1,
     Nombre: 'John',
@@ -112,6 +114,10 @@ export class ConsultaComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  solicitudUpdate() {
+    this.popupVisible = true;
   }
 
 }
