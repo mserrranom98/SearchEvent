@@ -113,23 +113,132 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-12">
-      <div class="card ">
-        <div class="card-header ">
-          <h5 class="card-title">Venta de entradas</h5>
-          <p class="card-category">Cantidad</p>
-        </div>
-        <div class="card-body ">
-          <canvas id=chartHours width="400" height="100"></canvas>
-        </div>
-        <div class="card-footer ">
-          <hr>
-          <div class="stats">
-            <i class="fa fa-history"></i> Ver detalle
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div class="div-table">
+
+  <dx-chart
+    id="chart"
+    [dataSource]="countriesInfo">
+    <dxi-series
+      *ngFor="let energy of energySources"
+      [valueField]="energy.value"
+      [name]="energy.name">
+    </dxi-series>
+    <dxo-common-series-settings
+      argumentField="country"
+      type="spline">
+      <dxo-point hoverMode="allArgumentPoints"></dxo-point>
+    </dxo-common-series-settings>
+    <dxo-argument-axis
+      [valueMarginsEnabled]="false"
+      discreteAxisDivisionMode="crossLabels">
+      <dxo-grid [visible]="true"></dxo-grid>
+    </dxo-argument-axis>
+    <dxo-crosshair
+      [enabled]="true"
+      color="#949494"
+      [width]="3"
+      dashStyle="dot">
+      <dxo-label
+        [visible]="true"
+        backgroundColor="#949494">
+        <dxo-font
+          color="#fff"
+          [size]="12">
+        </dxo-font>
+      </dxo-label>
+    </dxo-crosshair>
+    <dxo-legend
+      verticalAlignment="bottom"
+      horizontalAlignment="center"
+      itemTextPosition="bottom">
+    </dxo-legend>
+    <dxo-title text="Venta de entradas">
+    </dxo-title>
+    <dxo-tooltip [enabled]="true"
+                 [customizeTooltip]="customizeTooltip">
+    </dxo-tooltip>
+    <dxo-export [enabled]="true"></dxo-export>
+  </dx-chart><br>
+
+  <dx-chart
+    id="chart"
+    [dataSource]="countriesInfo">
+    <dxi-series
+      *ngFor="let energy of energySources"
+      [valueField]="energy.value"
+      [name]="energy.name">
+    </dxi-series>
+    <dxo-common-series-settings
+      argumentField="country"
+      type="spline">
+      <dxo-point hoverMode="allArgumentPoints"></dxo-point>
+    </dxo-common-series-settings>
+    <dxo-argument-axis
+      [valueMarginsEnabled]="false"
+      discreteAxisDivisionMode="crossLabels">
+      <dxo-grid [visible]="true"></dxo-grid>
+    </dxo-argument-axis>
+    <dxo-crosshair
+      [enabled]="true"
+      color="#949494"
+      [width]="3"
+      dashStyle="dot">
+      <dxo-label
+        [visible]="true"
+        backgroundColor="#949494">
+        <dxo-font
+          color="#fff"
+          [size]="12">
+        </dxo-font>
+      </dxo-label>
+    </dxo-crosshair>
+    <dxo-legend
+      verticalAlignment="bottom"
+      horizontalAlignment="center"
+      itemTextPosition="bottom">
+    </dxo-legend>
+    <dxo-title text="Venta servicios adicionales">
+    </dxo-title>
+    <dxo-tooltip [enabled]="true"
+                 [customizeTooltip]="customizeTooltip">
+    </dxo-tooltip>
+    <dxo-export [enabled]="true"></dxo-export>
+  </dx-chart>
+
+
+
+    <div id="data-grid-demo">
+      <dx-data-grid id="tableCuentas" [dataSource]="employees" keyExpr="ID" [showBorders]="true">
+        <dxo-header-filter [visible]="true">
+        </dxo-header-filter>
+        <dxo-search-panel [visible]="true" [width]="240" placeholder="Buscar...">
+
+        </dxo-search-panel>
+        <dxo-paging [enabled]="true"></dxo-paging>
+        <dxo-editing mode="form" [allowAdding]="true" [allowUpdating]="true">
+          <dxo-texts saveRowChanges="Guardar" cancelRowChanges="Cancelar" editRow="Editar">
+          </dxo-texts>
+        </dxo-editing>
+        <dxi-column dataField="NombreActividad" caption="Nombre actividad">
+        </dxi-column>
+        <dxi-column dataField="FechaInicio" caption="Fecha inicio">
+        </dxi-column>
+        <dxi-column dataField="FechaTermino" caption="Fecha termino">
+        </dxi-column>
+        <dxi-column dataField="Trabajador">
+        </dxi-column>
+        <dxi-column dataField="estado"
+                    caption="Estado"
+                    [width]="125">
+          <dxo-lookup
+            [dataSource]="Estado"
+            displayExpr="Name"
+            valueExpr="ID">
+          </dxo-lookup>
+        </dxi-column>
+          >
+        <dxi-column dataField="Comentarios" [visible]="true" >
+        </dxi-column>
+      </dx-data-grid>
+
 </div>
