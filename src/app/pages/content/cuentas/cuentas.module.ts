@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { CuentasRoutingModule } from './cuentas-routing.module';
 import { ConsultaComponent } from './consulta/consulta.component';
 import {AngularFireAuthModule} from '@angular/fire/auth';
-import {DxDataGridModule, DxFormModule, DxPopupModule} from 'devextreme-angular';
+import {DxButtonModule, DxDataGridModule, DxFormModule, DxPopupModule} from 'devextreme-angular';
 
 @NgModule({
   declarations: [ConsultaComponent],
@@ -13,8 +13,8 @@ import {DxDataGridModule, DxFormModule, DxPopupModule} from 'devextreme-angular'
     CuentasRoutingModule,
     DxDataGridModule,
     DxFormModule,
-    DxPopupModule
-
+    DxPopupModule,
+    DxButtonModule
   ]
 })
 export class CuentasModule { }
