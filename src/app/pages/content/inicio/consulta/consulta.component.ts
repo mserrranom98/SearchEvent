@@ -49,9 +49,6 @@ export class ConsultaComponent implements OnInit {
 
 
   energySources2: any[] = [
-    { value: 'p1', name: 'p1' },
-    { value: 'p2', name: 'p2' },
-    { value: 'p3', name: 'p3' },
     { value: 'Estacionamiento', name: 'Estacionamiento' },
     { value: 'Guardarropa', name: 'Guardarropa' }
   ];
