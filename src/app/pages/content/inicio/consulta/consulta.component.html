@@ -162,9 +162,9 @@
 
   <dx-chart
     id="chart"
-    [dataSource]="countriesInfo">
+    [dataSource]="countriesInfo2">
     <dxi-series
-      *ngFor="let energy of energySources"
+      *ngFor="let energy of energySources2"
       [valueField]="energy.value"
       [name]="energy.name">
     </dxi-series>
@@ -216,20 +216,20 @@
         </dxo-search-panel>
         <dxo-paging [enabled]="true"></dxo-paging>
         <dxo-editing mode="form" [allowAdding]="true" [allowUpdating]="true">
-          <dxo-texts saveRowChanges="Guardar" cancelRowChanges="Cancelar" editRow="Editar">
+          <dxo-texts cancelRowChanges="Cancelar" editRow="Ir">
           </dxo-texts>
         </dxo-editing>
-        <dxi-column dataField="NombreActividad" caption="Nombre actividad">
+        <dxi-column dataField="NombreActividad" caption="Nombre actividad" disabled="true">
         </dxi-column>
-        <dxi-column dataField="FechaInicio" caption="Fecha inicio">
+        <dxi-column dataField="FechaInicio" caption="Fecha inicio" disabled="true">
         </dxi-column>
-        <dxi-column dataField="FechaTermino" caption="Fecha termino">
+        <dxi-column dataField="FechaTermino" caption="Fecha termino" disabled="true">
         </dxi-column>
-        <dxi-column dataField="Trabajador">
+        <dxi-column dataField="Trabajador" disabled="true">
         </dxi-column>
         <dxi-column dataField="estado"
                     caption="Estado"
-                    [width]="125">
+                    [width]="125" disabled="true">
           <dxo-lookup
             [dataSource]="Estado"
             displayExpr="Name"
