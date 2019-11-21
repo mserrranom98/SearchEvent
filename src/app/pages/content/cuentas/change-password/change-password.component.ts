@@ -1,47 +1,58 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, Inject, Input, OnInit, ViewChild} from '@angular/core';
 import {TrabajadoresService} from '../../../../shared/services/trabajadores/trabajadores.service';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {MAT_DIALOG_DATA} from '@angular/material';
-import {MatDialogRef} from '@angular/material/typings/dialog';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
+import {DxFormComponent} from 'devextreme-angular';
 
 @Component({
   selector: 'app-change-password',
   templateUrl: './change-password.component.html'
 })
 export class ChangePasswordComponent implements OnInit {
+  @ViewChild(DxFormComponent, { static: false }) form: DxFormComponent;
 
   private token: string;
-  formPassword: FormGroup;
   rut: string;
+  cuenta = {password: '', confirmPassword: '', correo: ''};
+  buttonOptions: any = {
+    text: 'Register',
+    type: 'success',
+    useSubmitBehavior: true
+  };
 
   constructor(
     private trabajadoresService: TrabajadoresService,
-    private fb: FormBuilder,
     @Inject(MAT_DIALOG_DATA) public data,
     public dialogRef: MatDialogRef<ChangePasswordComponent>,
   ) {
     this.token = localStorage.getItem('token');
     this.rut = data.rut;
+    this.cuenta.correo = data.correo;
   }
 
   ngOnInit() {
-    this.formPassword = this.fb.group({
-      correo: this.data.correo,
-      password: new FormControl('', [Validators.required, Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[$@$!%*?&])[A-Za-z\\d$@$!%*?&]{8,}')]),
-      confirmPassword: new FormControl('', [Validators.required, Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[$@$!%*?&])[A-Za-z\\d$@$!%*?&]{8,}')])
-    });
   }
 
-  changePassword() {
-    if (this.formPassword.valid && this.formPassword.getRawValue().password === this.formPassword.getRawValue().confirmPassword) {
-      console.log('INICIO DE ACTUALIZACION DE CONTRASEÑA:');
-      this.trabajadoresService.chagePassword(this.token, this.formPassword.getRawValue()).subscribe((response: any) => {
-        console.log(response.message);
-        this.dialogRef.close();
-      }, error => {
-        console.log(error);
-      });
+  passwordComparison = () => {
+    return this.form.instance.option('formData').Password;
+  };
+
+  changePassword(event) {
+    console.log(event);
+    if (this.cuenta.password !== '' && this.cuenta.confirmPassword !== '') {
+      if (this.cuenta.password === this.cuenta.confirmPassword) {
+        console.log('INICIO DE ACTUALIZACION DE CONTRASEÑA:');
+        this.trabajadoresService.chagePassword(this.token, this.cuenta).subscribe((response: any) => {
+          console.log(response.message);
+          this.dialogRef.close();
+        }, error => {
+          console.log(error);
+        });
+      }
     }
+  }
+
+  cerrar() {
+    this.dialogRef.close();
   }
 
 }

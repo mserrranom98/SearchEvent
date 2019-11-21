@@ -4,7 +4,7 @@
     <div class="demo-container">
       <div class="div-table">
 
-        <div id="data-grid-demo">
+        <div *ngIf="viewTable" id="data-grid-demo">
           <dx-data-grid id="tableCuentas"
                         [dataSource]="trabajadores" [showBorders]="true"
                         (onRowUpdated)="updateTrabajador($event)"
@@ -51,7 +51,7 @@
             </dxi-column>
             <dxi-column dataField="changePassword" caption="Cambiar Contraseña" alignment="center" [allowFiltering]="false" [allowSorting]="false" cellTemplate="password"></dxi-column>
             <div *dxTemplate="let data of 'password'">
-              <i class="dx-link dx-link-search dx-icon-search" title="Cambiar Contraseña" (click)="openChangePassword(data)"></i>
+              <i class="icon icon-change-password" (click)="openChangePassword(data)"></i>
             </div>
           </dx-data-grid>
         </div>

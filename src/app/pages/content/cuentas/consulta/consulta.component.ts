@@ -19,6 +19,8 @@ export class ConsultaComponent implements OnInit {
   ];
   perfiles = [];
 
+  viewTable = false;
+
   constructor(
     private trabajadoresService: TrabajadoresService,
     public dialog: MatDialog,
@@ -38,6 +40,7 @@ export class ConsultaComponent implements OnInit {
       if (response.code === '0') {
         this.trabajadores = response.trabajadores;
         this.getPerfiles();
+        this.viewTable = true;
       }
       console.log(response.message);
     }, error => {
@@ -50,6 +53,7 @@ export class ConsultaComponent implements OnInit {
     this.perfilesService.getPerfilesActivo(this.token).subscribe((response: any) => {
       if (response.code === '0') {
         this.perfiles = response.perfiles;
+        this.viewTable = true;
       }
       console.log(response.message);
     }, error => {
