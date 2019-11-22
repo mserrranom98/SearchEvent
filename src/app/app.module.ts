@@ -15,8 +15,12 @@ import {environment} from '../environments/environment';
 import {AuthGuardService} from './shared/services/auth/auth-guard.service';
 
 import * as firebase from 'firebase';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MatStepperModule} from "@angular/material";
+
 
 firebase.initializeApp(environment.firebase);
+
 
 @NgModule({
   declarations: [
@@ -32,6 +36,8 @@ firebase.initializeApp(environment.firebase);
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    BrowserAnimationsModule,
+    MatStepperModule,
     AngularFireAuthModule
   ],
   providers: [
