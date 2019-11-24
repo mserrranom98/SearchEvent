@@ -1,4 +1,5 @@
 @import "styles/sesion.css";
 @import "styles/Tablas.css";
 @import "styles/Empresa.css";
-@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+@import "styles/chat.css";
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
