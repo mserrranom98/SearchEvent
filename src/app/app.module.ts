@@ -15,6 +15,9 @@ import {environment} from '../environments/environment';
 import {AuthGuardService} from './shared/services/auth/auth-guard.service';
 
 import * as firebase from 'firebase';
+import {NbChatModule, NbThemeModule, NbLayoutModule} from '@nebular/theme';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
 
 firebase.initializeApp(environment.firebase);
 
@@ -32,7 +35,13 @@ firebase.initializeApp(environment.firebase);
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    NbThemeModule.forRoot(),
+    NbChatModule.forRoot({ messageGoogleMapKey: 'MAP_KEY' }),
+    BrowserAnimationsModule,
+    NbThemeModule.forRoot({ name: 'default' }),
+    NbLayoutModule,
+    NbEvaIconsModule,
   ],
   providers: [
     HttpClient,

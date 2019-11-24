@@ -2,3 +2,12 @@
 @import "styles/Tablas.css";
 @import "styles/Empresa.css";
 @import "styles/steep.css";
+
+
+.nb-theme-default nb-layout .layout .layout-container .content .columns nb-layout-column {
+  padding: 0 !important;
+}
+
+nb-layout-column {
+  display: block !important;
+}

@@ -1,4 +1,4 @@
-<div class="content">
+<!-- <div class="content">
   <div class="col-md-3 pr-3">
     <div class="form-group">
       <select name="Eventos" class="form-control" value="Eventos" >
@@ -242,4 +242,34 @@
       </dx-data-grid>
 
 </div>
-  </div></div>
+  </div></div> -->
+<nb-chat title="Jake" size="medium" status="warning">
+  <nb-chat-message *ngFor="let message of messages"
+                   [type]="message.type"
+                   [message]="message.text"
+                   [reply]="message.reply"
+                   [sender]="message.user.name"
+                   [date]="message.date"
+                   [files]="message.files"
+                   [quote]="message.quote"
+                   [latitude]="message.latitude"
+                   [longitude]="message.longitude"
+                   [avatar]="message.user.avatar"></nb-chat-message>
+  <nb-chat-form (send)="sendMessage($event, 'Jake', 'http://www.reactiongifs.com/r/wnd1.gif', true)" [showButton]="false" [dropFiles]="true">
+  </nb-chat-form>
+</nb-chat>
+<nb-chat title="John" size="medium" status="success">
+  <nb-chat-message *ngFor="let message of messages"
+                   [type]="message.type"
+                   [message]="message.text"
+                   [reply]="!message.reply"
+                   [sender]="message.user.name"
+                   [date]="message.date"
+                   [files]="message.files"
+                   [quote]="message.quote"
+                   [latitude]="message.latitude"
+                   [longitude]="message.longitude"
+                   [avatar]="message.user.avatar"></nb-chat-message>
+  <nb-chat-form (send)="sendMessage($event, 'John', 'https://i.gifer.com/no.gif', false)" [showButton]="false" [dropFiles]="true">
+  </nb-chat-form>
+</nb-chat>

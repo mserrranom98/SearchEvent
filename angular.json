@@ -29,7 +29,8 @@
               "node_modules/devextreme/dist/css/dx.light.css",
               "src/assets/scss/paper-dashboard.scss",
               "node_modules/ngx-toastr/toastr.css",
-              "src/assets/css/managevent.css"
+              "src/assets/css/managevent.css",
+              "node_modules/@nebular/theme/styles/prebuilt/default.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
