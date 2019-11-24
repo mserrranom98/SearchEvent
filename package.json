@@ -12,12 +12,17 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^8.1.3",
+<<<<<<< HEAD
     "@angular/cdk": "^8.0.0",
+=======
+    "@angular/cdk": "^8.2.3",
+>>>>>>> 55754a0a9d49342af48550d7c7c3b27f662e9d79
     "@angular/common": "~8.1.0",
     "@angular/compiler": "~8.1.0",
     "@angular/core": "~8.1.0",
     "@angular/fire": "^5.2.1",
     "@angular/forms": "~8.1.0",
+    "@angular/material": "^8.2.3",
     "@angular/platform-browser": "~8.1.0",
     "@angular/platform-browser-dynamic": "~8.1.0",
     "@angular/router": "~8.1.0",

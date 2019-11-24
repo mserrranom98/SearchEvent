@@ -15,11 +15,18 @@ import {environment} from '../environments/environment';
 import {AuthGuardService} from './shared/services/auth/auth-guard.service';
 
 import * as firebase from 'firebase';
+<<<<<<< HEAD
 import {NbChatModule, NbThemeModule, NbLayoutModule} from '@nebular/theme';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+=======
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MatStepperModule} from "@angular/material";
+
+>>>>>>> 55754a0a9d49342af48550d7c7c3b27f662e9d79
 
 firebase.initializeApp(environment.firebase);
+
 
 @NgModule({
   declarations: [
@@ -35,6 +42,7 @@ firebase.initializeApp(environment.firebase);
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+<<<<<<< HEAD
     AngularFireAuthModule,
     NbThemeModule.forRoot(),
     NbChatModule.forRoot({ messageGoogleMapKey: 'MAP_KEY' }),
@@ -42,6 +50,11 @@ firebase.initializeApp(environment.firebase);
     NbThemeModule.forRoot({ name: 'default' }),
     NbLayoutModule,
     NbEvaIconsModule,
+=======
+    BrowserAnimationsModule,
+    MatStepperModule,
+    AngularFireAuthModule
+>>>>>>> 55754a0a9d49342af48550d7c7c3b27f662e9d79
   ],
   providers: [
     HttpClient,
