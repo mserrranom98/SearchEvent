@@ -1,13 +1,14 @@
-<!-- <div class="content">
+<div class="content">
   <div class="col-md-3 pr-3">
     <div class="form-group">
-      <select name="Eventos" class="form-control" value="Eventos" >
+      <select name="Eventos" class="form-control" value="Eventos">
         <option>Evento 1</option>
         <option>Evento 2</option>
         <option>Evento 3</option>
       </select>
     </div>
-  </div><br>
+  </div>
+  <br>
 
 
   <div class="row">
@@ -23,7 +24,8 @@
             <div class="col-7 col-md-8">
               <div class="numbers">
                 <p class="card-category">Actividades finalizadas</p>
-                <p class="card-title">160<p>
+                <p class="card-title">160
+                <p>
               </div>
             </div>
           </div>
@@ -48,7 +50,8 @@
             <div class="col-7 col-md-8">
               <div class="numbers">
                 <p class="card-category">Actividades pendientes</p>
-                <p class="card-title">30<p>
+                <p class="card-title">30
+                <p>
               </div>
             </div>
           </div>
@@ -73,7 +76,8 @@
             <div class="col-7 col-md-8">
               <div class="numbers">
                 <p class="card-category">Actividades finalizadas</p>
-                <p class="card-title">160<p>
+                <p class="card-title">160
+                <p>
               </div>
             </div>
           </div>
@@ -115,95 +119,96 @@
   </div>
   <div class="div-table">
 
-  <dx-chart
-    id="chart2"
-    [dataSource]="countriesInfo">
-    <dxi-series
-      *ngFor="let energy of energySources"
-      [valueField]="energy.value"
-      [name]="energy.name">
-    </dxi-series>
-    <dxo-common-series-settings
-      argumentField="country"
-      type="spline">
-      <dxo-point hoverMode="allArgumentPoints"></dxo-point>
-    </dxo-common-series-settings>
-    <dxo-argument-axis
-      [valueMarginsEnabled]="false"
-      discreteAxisDivisionMode="crossLabels">
-      <dxo-grid [visible]="true"></dxo-grid>
-    </dxo-argument-axis>
-    <dxo-crosshair
-      [enabled]="true"
-      color="#949494"
-      [width]="3"
-      dashStyle="dot">
-      <dxo-label
-        [visible]="true"
-        backgroundColor="#949494">
-        <dxo-font
-          color="#fff"
-          [size]="12">
-        </dxo-font>
-      </dxo-label>
-    </dxo-crosshair>
-    <dxo-legend
-      verticalAlignment="bottom"
-      horizontalAlignment="center"
-      itemTextPosition="bottom">
-    </dxo-legend>
-    <dxo-title text="Venta de entradas">
-    </dxo-title>
-    <dxo-tooltip [enabled]="true"
-                 [customizeTooltip]="customizeTooltip">
-    </dxo-tooltip>
-    <dxo-export [enabled]="true"></dxo-export>
-  </dx-chart><br>
+    <dx-chart
+      id="chart2"
+      [dataSource]="countriesInfo">
+      <dxi-series
+        *ngFor="let energy of energySources"
+        [valueField]="energy.value"
+        [name]="energy.name">
+      </dxi-series>
+      <dxo-common-series-settings
+        argumentField="country"
+        type="spline">
+        <dxo-point hoverMode="allArgumentPoints"></dxo-point>
+      </dxo-common-series-settings>
+      <dxo-argument-axis
+        [valueMarginsEnabled]="false"
+        discreteAxisDivisionMode="crossLabels">
+        <dxo-grid [visible]="true"></dxo-grid>
+      </dxo-argument-axis>
+      <dxo-crosshair
+        [enabled]="true"
+        color="#949494"
+        [width]="3"
+        dashStyle="dot">
+        <dxo-label
+          [visible]="true"
+          backgroundColor="#949494">
+          <dxo-font
+            color="#fff"
+            [size]="12">
+          </dxo-font>
+        </dxo-label>
+      </dxo-crosshair>
+      <dxo-legend
+        verticalAlignment="bottom"
+        horizontalAlignment="center"
+        itemTextPosition="bottom">
+      </dxo-legend>
+      <dxo-title text="Venta de entradas">
+      </dxo-title>
+      <dxo-tooltip [enabled]="true"
+                   [customizeTooltip]="customizeTooltip">
+      </dxo-tooltip>
+      <dxo-export [enabled]="true"></dxo-export>
+    </dx-chart>
+    <br>
 
-  <dx-chart
-    id="chart"
-    [dataSource]="countriesInfo2">
-    <dxi-series
-      *ngFor="let energy of energySources2"
-      [valueField]="energy.value"
-      [name]="energy.name">
-    </dxi-series>
-    <dxo-common-series-settings
-      argumentField="country"
-      type="spline">
-      <dxo-point hoverMode="allArgumentPoints"></dxo-point>
-    </dxo-common-series-settings>
-    <dxo-argument-axis
-      [valueMarginsEnabled]="false"
-      discreteAxisDivisionMode="crossLabels">
-      <dxo-grid [visible]="true"></dxo-grid>
-    </dxo-argument-axis>
-    <dxo-crosshair
-      [enabled]="true"
-      color="#949494"
-      [width]="3"
-      dashStyle="dot">
-      <dxo-label
-        [visible]="true"
-        backgroundColor="#949494">
-        <dxo-font
-          color="#fff"
-          [size]="12">
-        </dxo-font>
-      </dxo-label>
-    </dxo-crosshair>
-    <dxo-legend
-      verticalAlignment="bottom"
-      horizontalAlignment="center"
-      itemTextPosition="bottom">
-    </dxo-legend>
-    <dxo-title text="Venta servicios adicionales">
-    </dxo-title>
-    <dxo-tooltip [enabled]="true"
-                 [customizeTooltip]="customizeTooltip">
-    </dxo-tooltip>
-    <dxo-export [enabled]="true"></dxo-export>
-  </dx-chart>
+    <dx-chart
+      id="chart"
+      [dataSource]="countriesInfo2">
+      <dxi-series
+        *ngFor="let energy of energySources2"
+        [valueField]="energy.value"
+        [name]="energy.name">
+      </dxi-series>
+      <dxo-common-series-settings
+        argumentField="country"
+        type="spline">
+        <dxo-point hoverMode="allArgumentPoints"></dxo-point>
+      </dxo-common-series-settings>
+      <dxo-argument-axis
+        [valueMarginsEnabled]="false"
+        discreteAxisDivisionMode="crossLabels">
+        <dxo-grid [visible]="true"></dxo-grid>
+      </dxo-argument-axis>
+      <dxo-crosshair
+        [enabled]="true"
+        color="#949494"
+        [width]="3"
+        dashStyle="dot">
+        <dxo-label
+          [visible]="true"
+          backgroundColor="#949494">
+          <dxo-font
+            color="#fff"
+            [size]="12">
+          </dxo-font>
+        </dxo-label>
+      </dxo-crosshair>
+      <dxo-legend
+        verticalAlignment="bottom"
+        horizontalAlignment="center"
+        itemTextPosition="bottom">
+      </dxo-legend>
+      <dxo-title text="Venta servicios adicionales">
+      </dxo-title>
+      <dxo-tooltip [enabled]="true"
+                   [customizeTooltip]="customizeTooltip">
+      </dxo-tooltip>
+      <dxo-export [enabled]="true"></dxo-export>
+    </dx-chart>
 
     <div id="data-grid-demo">
       <dx-data-grid id="tableCuentas" [dataSource]="employees" keyExpr="ID" [showBorders]="true">
@@ -234,16 +239,16 @@
             valueExpr="ID">
           </dxo-lookup>
         </dxi-column>
-          >
-        <dxi-column dataField="Comentarios" [visible]="true" >
+        >
+        <dxi-column dataField="Comentarios" [visible]="true">
         </dxi-column>
-      </dx-data-grid><br><br>
-</div>
+      </dx-data-grid>
+      <br><br>
+    </div>
 
 
+  </div>
 </div>
-<<<<<<< HEAD
-  </div></div> -->
 <nb-chat title="Jake" size="medium" status="warning">
   <nb-chat-message *ngFor="let message of messages"
                    [type]="message.type"
@@ -256,7 +261,8 @@
                    [latitude]="message.latitude"
                    [longitude]="message.longitude"
                    [avatar]="message.user.avatar"></nb-chat-message>
-  <nb-chat-form (send)="sendMessage($event, 'Jake', 'http://www.reactiongifs.com/r/wnd1.gif', true)" [showButton]="false" [dropFiles]="true">
+  <nb-chat-form (send)="sendMessage($event, 'Jake', 'http://www.reactiongifs.com/r/wnd1.gif', true)"
+                [showButton]="false" [dropFiles]="true">
   </nb-chat-form>
 </nb-chat>
 <nb-chat title="John" size="medium" status="success">
@@ -271,6 +277,7 @@
                    [latitude]="message.latitude"
                    [longitude]="message.longitude"
                    [avatar]="message.user.avatar"></nb-chat-message>
-  <nb-chat-form (send)="sendMessage($event, 'John', 'https://i.gifer.com/no.gif', false)" [showButton]="false" [dropFiles]="true">
+  <nb-chat-form (send)="sendMessage($event, 'John', 'https://i.gifer.com/no.gif', false)" [showButton]="false"
+                [dropFiles]="true">
   </nb-chat-form>
 </nb-chat>

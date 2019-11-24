@@ -10,3 +10,7 @@
 nb-layout-column {
   display: block !important;
 }
+
+.nb-theme-default nb-layout .layout {
+  background-color: white !important;
+}
