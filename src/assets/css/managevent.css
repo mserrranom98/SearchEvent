@@ -1,8 +1,6 @@
 @import "styles/sesion.css";
 @import "styles/Tablas.css";
 @import "styles/Empresa.css";
-<<<<<<< HEAD
-@import "styles/steep.css";
 
 
 .nb-theme-default nb-layout .layout .layout-container .content .columns nb-layout-column {
@@ -12,7 +10,3 @@
 nb-layout-column {
   display: block !important;
 }
-=======
-@import "styles/chat.css";
-@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
->>>>>>> 55754a0a9d49342af48550d7c7c3b27f662e9d79
