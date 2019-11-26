@@ -90,6 +90,30 @@ export class ConsultaComponent implements OnInit {
     Perfil: '3',
   }];
 
+  customers = [{
+    ID: 1,
+    Sector: 'VIP',
+    FechaInicio: '25-11-2019',
+    FechaTermino: '30-11-2019',
+    Cantidad: '100',
+    Precio: '5.000',
+  }, {
+    ID: 2,
+    Sector: 'Galeria',
+    FechaInicio: '02-12-2019',
+    FechaTermino: '30-12-2019',
+    Cantidad: '500',
+    Precio: '3.000',
+  }, {
+    ID: 3,
+    Sector: 'Platea',
+    FechaInicio: '02-01-2020',
+    FechaTermino: '30-02-2020',
+    Cantidad: '200',
+    Precio: '4.000',
+  }
+];
+
   Estado = [{
     ID: '1',
     Name: 'Habilitado'
