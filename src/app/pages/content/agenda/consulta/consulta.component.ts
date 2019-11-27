@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConsultaComponent implements OnInit {
 
+  currentDate: Date = new Date(2017, 4, 25);
+
   appointmentsData = [{
       text: "Website Re-Design Plan",
       startDate: new Date(2017, 4, 22, 9, 30),
