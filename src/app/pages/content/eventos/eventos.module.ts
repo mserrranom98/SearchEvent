@@ -6,7 +6,7 @@ import {ConsultaComponent} from './consulta/consulta.component';
 import {
   DxCheckBoxModule,
   DxDataGridModule, DxDateBoxModule, DxFileUploaderModule,
-  DxFormModule, DxNumberBoxModule,
+  DxFormModule, DxGalleryModule, DxNumberBoxModule,
   DxSelectBoxModule,
   DxTemplateModule,
   DxTextAreaModule
@@ -25,7 +25,7 @@ import {MatStepperModule} from "@angular/material";
     DxDateBoxModule,
     DxFileUploaderModule,
     DxFormModule,
-    DxSelectBoxModule, DxTemplateModule,
+    DxSelectBoxModule, DxTemplateModule, DxGalleryModule,
     DxDataGridModule,
     DxNumberBoxModule,
     DxCheckBoxModule,

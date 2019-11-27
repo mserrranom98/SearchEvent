@@ -3,19 +3,15 @@
     <div class="form-group">
       <div class="demo-container">
         <div class="div-table">
-
           <div id="data-grid-demo">
             <dx-data-grid id="tableCuentas" [dataSource]="employees" keyExpr="ID" [showBorders]="true">
               <dxo-header-filter [visible]="true">
               </dxo-header-filter>
+Tabla de listado de eventos
               <dxo-search-panel [visible]="true" [width]="240" placeholder="Buscar...">
 
               </dxo-search-panel>
               <dxo-paging [enabled]="true"></dxo-paging>
-              <dxo-editing mode="form" [allowAdding]="true" [allowUpdating]="true">
-                <dxo-texts saveRowChanges="Guardar" cancelRowChanges="Cancelar" editRow="Editar">
-                </dxo-texts>
-              </dxo-editing>
               <dxi-column dataField="NombreEvento" caption="Nombre de evento">
               </dxi-column>
               <dxi-column dataField="FechaPublicacion"  caption="Fecha de publicacion" dataType="date" >
@@ -55,7 +51,7 @@
             </dx-data-grid>
           </div>
         </div>
-
+Paso a paso para crear evento
         <div class="div-table">
           <mat-horizontal-stepper >
 
@@ -164,7 +160,7 @@
                 </div>
               </div>
               <div>
-                <button mat-button matStepperPrevious class="btn btn-light">Volver</button>
+                <button mat-button matStepperPrevious class="btn btn-outline-warning">Anterior</button>
                 <button mat-button matStepperNext class="btn btn-warning">Siguiente</button>
               </div>
             </mat-step>
@@ -191,7 +187,7 @@
                 <dxo-grouping #expand [autoExpandAll]="true"></dxo-grouping>
               </dx-data-grid>
               <div>
-                <button mat-button matStepperPrevious class="btn btn-light">Volver</button>
+                <button mat-button matStepperPrevious class="btn btn-outline-warning">Anterior</button>
                 <button mat-button matStepperNext class="btn btn-warning">Siguiente</button>
               </div>
             </mat-step>
@@ -242,12 +238,140 @@
                 </div>
               </div>
               <div>
-                <button mat-button matStepperPrevious class="btn btn-light">Volver</button>
+                <button mat-button matStepperPrevious class="btn btn-outline-warning">Anterior</button>
                 <button mat-button matStepperNext class="btn btn-warning">Siguiente</button>
               </div>
             </mat-step>
-
           </mat-horizontal-stepper>
+
+Tabs para detalle de evento
+          <div id="form-container">
+            <dx-form id="form"
+                     [formData]="employee"
+                     [colCount]="1">
+              <dxi-item itemType="group" caption="Contact Information">
+                <dxi-item itemType="tabbed" [tabPanelOptions]="{ deferRendering: false }">
+                  <dxi-tab title="Datos">
+                    <dxi-item dataField="Nombre"></dxi-item>
+                    <dxi-item dataField="FechaInicio" caption="Fecha de Inicio" editorType="dxDateBox"></dxi-item>
+                    <dxi-item dataField="FechaPublicacion" caption="Fecha de publicacion" editorType="dxDateBox"></dxi-item>
+                    <dxi-item dataField="FechaFinalizacion" caption="Fecha de finalizacion" editorType="dxDateBox"></dxi-item>
+                    <dxi-item dataField="Categoria" editorType="dxSelectBox" [editorOptions]="{ items: states }"
+                    ></dxi-item>
+                    <dxi-item dataField="Estado" editorType="dxSelectBox" [editorOptions]="{ items: states }"
+                    ></dxi-item>
+                    <dxi-item dataField="Establecimiento" editorType="dxSelectBox" [editorOptions]="{ items: states }"
+                    ></dxi-item>
+                    <dxi-item dataField="Descripcion" [colSpan]="2" editorType="dxTextArea"
+                              [editorOptions]="{ height: 140 }"></dxi-item>
+                  </dxi-tab>
+                  <dxi-tab title="Imagenes">
+                    <div class="widget-container">
+                      <dx-gallery #gallery
+                                  id="gallery"
+                                  [dataSource]="images"
+                                  [height]="300"
+                                  [slideshowDelay]="slideshowDelay"
+                                  [loop]="true"
+                                  [showNavButtons]="true"
+                                  [showIndicator]="true"
+                      ></dx-gallery>
+                    </div>
+                    <div class="options">
+                      <div class="caption">Options</div>
+                      <div class="option">
+                        <dx-check-box #loop
+                                      text="Loop mode"
+                                      [(value)]="gallery.loop">
+                        </dx-check-box>
+                      </div>
+                      <div class="option">
+                        <dx-check-box
+                          text="Slide show"
+                          (onValueChanged)="valueChanged($event)"
+                          [value]="true">
+                        </dx-check-box>
+                      </div>
+                      <div class="option">
+                        <dx-check-box
+                          text="Navigation buttons"
+                          [(value)]="gallery.showNavButtons">
+                        </dx-check-box>
+                      </div>
+                      <div class="option">
+                        <dx-check-box
+                          text="Indicator"
+                          [(value)]="gallery.showIndicator">
+                        </dx-check-box>
+                      </div>
+                    </div>
+
+                  </dxi-tab>
+                  <dxi-tab title="Entradas">
+                    <dx-data-grid
+                      [dataSource]="entradas"
+                      [remoteOperations]="true"
+                      height="600"
+                      showBorders="true"
+                      [masterDetail]="{ enabled: true, template: 'detail' }">
+
+                      <dxo-group-panel [visible]="true"></dxo-group-panel>
+                      <dxo-scrolling mode="virtual"></dxo-scrolling>
+                      <dxo-grouping [autoExpandAll]="false"></dxo-grouping>
+
+                      <dxi-column dataField="Sector" caption="Sector">
+                      </dxi-column>
+                      <dxi-column dataField="Capacidad" caption="Capacidad">
+                      </dxi-column>
+                      <dxi-column dataField="CantidadVentas" caption="Cantidad de entradas">
+                      </dxi-column>
+                      <dxi-column dataField="Precio" caption="Precio">
+                      </dxi-column>
+
+                      <div *dxTemplate="let entradas of 'detail'">
+                        <dx-data-grid
+                          [dataSource]="entradas.data.promociones" keyExpr="ID"
+                          [showBorders]="true"
+                          [columnAutoWidth]="true">
+                          <dxi-column dataField="FechaInicio" caption="Fecha de inicio" dataType="date" ></dxi-column>
+                          <dxi-column dataField="FechaTermino" caption="Fecha de termino" dataType="date" ></dxi-column>
+                          <dxi-column dataField="Cantidad" ></dxi-column>
+                          <dxi-column dataField="Precio" ></dxi-column>
+                        </dx-data-grid>
+                      </div>
+
+                    </dx-data-grid>
+
+                  </dxi-tab>
+                  <dxi-tab title="Serv. Adicionales">
+                    <dx-data-grid
+                      [dataSource]="servicios"
+                      [remoteOperations]="true"
+                      height="600"
+                      showBorders="true">
+
+
+                      <dxo-group-panel [visible]="true"></dxo-group-panel>
+                      <dxo-scrolling mode="virtual"></dxo-scrolling>
+                      <dxo-grouping [autoExpandAll]="false"></dxo-grouping>
+
+                      <dxi-column dataField="Sector" caption="Sector">
+                      </dxi-column>
+                      <dxi-column dataField="Capacidad" caption="Capacidad">
+                      </dxi-column>
+                      <dxi-column dataField="CantidadVentas" caption="Cantidad de entradas">
+                      </dxi-column>
+                      <dxi-column dataField="Precio" caption="Precio">
+                      </dxi-column>
+
+                    </dx-data-grid>
+                  </dxi-tab>
+                </dxi-item>
+              </dxi-item>
+            </dx-form>
+          </div>
+
+
         </div>
       </div>
     </div>
