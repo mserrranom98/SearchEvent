@@ -20,9 +20,9 @@ export class ChangePasswordComponent implements OnInit {
   };
 
   constructor(
-    private trabajadoresService: TrabajadoresService,
-    @Inject(MAT_DIALOG_DATA) public data,
     public dialogRef: MatDialogRef<ChangePasswordComponent>,
+    @Inject(MAT_DIALOG_DATA) public data,
+    private trabajadoresService: TrabajadoresService,
   ) {
     this.token = localStorage.getItem('token');
     this.rut = data.rut;

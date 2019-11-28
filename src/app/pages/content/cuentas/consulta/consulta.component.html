@@ -3,6 +3,7 @@
   <div class="form-group">
     <div class="demo-container">
       <div class="div-table">
+        <button (click)="openChangePassword({data: {correo: 'admin@managevent.cl', rut: '253552913'}})">asd</button>
 
         <div *ngIf="viewTable" id="data-grid-demo">
           <dx-data-grid id="tableCuentas"
@@ -51,7 +52,7 @@
             </dxi-column>
             <dxi-column dataField="changePassword" caption="Cambiar Contraseña" alignment="center" [allowFiltering]="false" [allowSorting]="false" cellTemplate="password"></dxi-column>
             <div *dxTemplate="let data of 'password'">
-              <i class="icon icon-change-password" (click)="openChangePassword(data)"></i>
+              <img src="../../../../../assets/img/icons/change-password-icon-3.jpg" [width]="20" [height]="20" (click)="openChangePassword(data)" alt="Imagen de cambio de contraseña">
             </div>
           </dx-data-grid>
         </div>

@@ -91,9 +91,11 @@ export class ConsultaComponent implements OnInit {
   }
 
   onEditorPreparing(e) {
-    if (e.row.inserted && e.dataField === 'estado') {
-      e.editorOptions.value = true;
-      e.editorOptions.disabled = true;
+    if (e.row) {
+      if (e.row.inserted && e.dataField === 'estado') {
+        e.editorOptions.value = true;
+        e.editorOptions.disabled = true;
+      }
     }
   }
 

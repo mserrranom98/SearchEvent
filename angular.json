@@ -30,13 +30,14 @@
               "node_modules/devextreme/dist/css/dx.light.css",
               "src/assets/scss/paper-dashboard.scss",
               "node_modules/ngx-toastr/toastr.css",
-              "src/assets/css/managevent.css"
+              "src/assets/css/managevent.css",
+              "src/styles.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/popper.js/dist/umd/popper.min.js",
-              "node_modules/tether/dist/js/tether.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/tether/dist/js/tether.js"
             ]
           },
           "configurations": {
