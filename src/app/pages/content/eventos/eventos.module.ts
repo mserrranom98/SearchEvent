@@ -9,7 +9,7 @@ import {
   DxFormModule, DxGalleryModule, DxNumberBoxModule,
   DxSelectBoxModule,
   DxTemplateModule,
-  DxTextAreaModule
+  DxTextAreaModule, DxToolbarModule
 } from "devextreme-angular";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatStepperModule} from "@angular/material";
@@ -29,6 +29,7 @@ import {MatStepperModule} from "@angular/material";
     DxDataGridModule,
     DxNumberBoxModule,
     DxCheckBoxModule,
+    DxToolbarModule,
     DxTextAreaModule
   ]
 })

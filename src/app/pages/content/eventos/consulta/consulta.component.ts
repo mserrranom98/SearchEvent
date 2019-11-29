@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import notify from "devextreme/ui/notify";
 
 @Component({
   selector: 'app-consulta',
@@ -189,7 +190,16 @@ export class ConsultaComponent implements OnInit {
     Name: 'Administrador'
   }];
 
-  constructor() { }
+  deleteButtonOptions: any;
+
+    constructor() {
+      this.deleteButtonOptions = {
+        text: 'Eliminar' ,
+        onClick: () => {
+          notify('Add button has been clicked!');
+        }
+      };
+    }
 
   ngOnInit() {
   }
