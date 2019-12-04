@@ -9,7 +9,7 @@ import { ConsultaComponent } from './consulta/consulta.component';
   declarations: [ConsultaComponent],
   imports: [
     CommonModule,
-    RegistroEntradaRoutingModule,
+    RegistroEntradaRoutingModule
   ]
 })
 export class RegistroEntradaModule { }
