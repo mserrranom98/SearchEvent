@@ -185,4 +185,6 @@ export class ConsultaComponent implements OnInit {
   ngOnInit() {
   }
 
+  customizeTooltip() {}
+
 }
