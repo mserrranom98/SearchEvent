@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ActividadesRoutingModule } from './actividades-routing.module';
 import {ConsultaComponent} from './consulta/consulta.component';
-import {DxDataGridModule, DxTextAreaModule} from "devextreme-angular";
+import {DxDataGridModule, DxTagBoxModule, DxTextAreaModule} from "devextreme-angular";
 
 
 @NgModule({
@@ -12,6 +12,7 @@ import {DxDataGridModule, DxTextAreaModule} from "devextreme-angular";
     CommonModule,
     DxDataGridModule,
     DxTextAreaModule,
+    DxTagBoxModule,
     ActividadesRoutingModule
   ]
 })

@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { InicioRoutingModule } from './inicio-routing.module';
 import {ConsultaComponent} from './consulta/consulta.component';
 import {DxChartModule, DxDataGridModule, DxFormModule} from "devextreme-angular";
-import {NbChatModule} from '@nebular/theme';
+import {NbChatModule, NbCheckboxModule} from '@nebular/theme';
 
 
 @NgModule({
@@ -14,7 +14,7 @@ import {NbChatModule} from '@nebular/theme';
     InicioRoutingModule,
     DxDataGridModule,
     DxFormModule,
-    DxChartModule,
+    DxChartModule, NbCheckboxModule,
     NbChatModule
   ]
 })

@@ -10,44 +10,49 @@ export class ConsultaComponent implements OnInit {
   currentDate: Date = new Date(2017, 4, 25);
 
   appointmentsData = [{
-      text: "Website Re-Design Plan",
+      Evento: "Website Re-Design Plan",
+      Establecimiento: "Website Re-Design Plan",
       startDate: new Date(2017, 4, 22, 9, 30),
       endDate: new Date(2017, 4, 22, 11, 30)
     }, {
-      text: "Book Flights to San Fran for Sales Trip",
+      Actividad: "Book Flights to San Fran for Sales Trip",
       startDate: new Date(2017, 4, 22, 12, 0),
       endDate: new Date(2017, 4, 22, 13, 0),
       allDay: true
     }, {
-      text: "Install New Router in Dev Room",
+      Evento: "Install New Router in Dev Room",
+      Establecimiento: "Install New Router in Dev Room",
       startDate: new Date(2017, 4, 22, 14, 30),
       endDate: new Date(2017, 4, 22, 15, 30)
     }, {
-      text: "Approve Personal Computer Upgrade Plan",
+      Actividad: "Approve Personal Computer Upgrade Plan",
       startDate: new Date(2017, 4, 23, 10, 0),
       endDate: new Date(2017, 4, 23, 11, 0)
     }, {
-      text: "Final Budget Review",
+      Evento: "Final Budget Review",
+      Establecimiento:"Install New Router in Dev Room",
       startDate: new Date(2017, 4, 23, 12, 0),
       endDate: new Date(2017, 4, 23, 13, 35)
     }, {
-      text: "New Brochures",
+      Actividad: "New Brochures",
       startDate: new Date(2017, 4, 23, 14, 30),
       endDate: new Date(2017, 4, 23, 15, 45)
     }, {
-      text: "Install New Database",
+      Evento: "Install New Database",
+      Establecimiento: "Install New Router in Dev Room",
       startDate: new Date(2017, 4, 24, 9, 45),
       endDate: new Date(2017, 4, 24, 11, 15)
     }, {
-      text: "Approve New Online Marketing Strategy",
+      Actividad: "Approve New Online Marketing Strategy",
       startDate: new Date(2017, 4, 24, 12, 0),
       endDate: new Date(2017, 4, 24, 14, 0)
     }, {
-      text: "Upgrade Personal Computers",
+       Evento: "Upgrade Personal Computers",
+       Establecimiento:"Install New Router in Dev Room",
       startDate: new Date(2017, 4, 24, 15, 15),
       endDate: new Date(2017, 4, 24, 16, 30)
     }, {
-      text: "Customer Workshop",
+      Actividad: "Customer Workshop",
       startDate: new Date(2017, 4, 25, 11, 0),
       endDate: new Date(2017, 4, 25, 12, 0),
       allDay: true

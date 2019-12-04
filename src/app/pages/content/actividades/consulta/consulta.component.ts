@@ -10,103 +10,89 @@ export class ConsultaComponent implements OnInit {
   employees = [{
     ID: 1,
     Nombre: 'John',
-    Apellido: 'Heart',
-    Rut: '1-9',
-    Correo: 'admin@prueba.cl',
+    FechaInicio: '01-01-2020',
+    FechaTermino: '02-05-2020',
+    Trabajador: 'Juan',
     Estado: '1',
-    Contraseña: '1234',
-    Perfil: '3',
+    Descripcion: 'Test',
   }, {
     ID: 2,
     Nombre: 'Robert',
-    Apellido: 'Reagan',
-    Rut: '1-9',
-    Correo: 'trabajador@prueba.cl',
+    FechaInicio: '01-01-2020',
+    FechaTermino: '02-05-2020',
+    Trabajador: 'trabajador@prueba.cl',
     Estado: '2',
-    Contraseña: '1234',
-    Perfil: '1',
+    Descripcion: '1234',
   }, {
     ID: 3,
     Nombre: 'Greta',
-    Apellido: 'Sis',
-    Rut: '1-9',
-    Correo: 'trabajador@prueba.cl',
-    Estado: '1',
-    Contraseña: '1234',
-    Perfil: '1',
+    FechaInicio: '01-01-2020',
+    FechaTermino: '02-05-2020',
+    Trabajador: 'trabajador@prueba.cl',
+    Estado: '3',
+    Descripcion: '1234',
   }, {
     ID: 4,
     Nombre: 'Brett',
-    Apellido: 'Wade',
-    Rut: '1-9',
-    Correo: 'admin@prueba.cl',
-    Estado: '1',
-    Contraseña: '1234',
-    Perfil: '3',
+    FechaInicio: '01-01-2020',
+    FechaTermino: '02-05-2020',
+    Trabajador: 'admin@prueba.cl',
+    Estado: '4',
+    Descripcion: '1234',
   }, {
     ID: 5,
     Nombre: 'Sandra',
-    Apellido: 'Johnson',
-    Rut: '1-9',
-    Correo: 'organizador@prueba.cl',
+    FechaInicio: '01-01-2020',
+    FechaTermino: '02-05-2020',
+    Trabajador: 'organizador@prueba.cl',
     Estado: '1',
-    Contraseña: '1234',
-    Perfil: '2',
+    Descripcion: '1234',
   }, {
     ID: 6,
     Nombre: 'Kevin',
-    Apellido: 'Carter',
-    Rut: '1-9',
-    Correo: 'trabajador@prueba.cl',
+    FechaInicio: '01-01-2020',
+    FechaTermino: '02-05-2020',
+    Trabajador: 'trabajador@prueba.cl',
     Estado: '2',
-    Contraseña: '1234',
-    Perfil: '3',
+    Descripcion: '1234',
   }, {
     ID: 7,
     Nombre: 'Cynthia',
-    Apellido: 'Stanwick',
-    Rut: '1-9',
-    Correo: 'trabajador@prueba.cl',
+    FechaInicio: '01-01-2020',
+    FechaTermino: '02-05-2020',
+    Trabajador: 'trabajador@prueba.cl',
     Estado: '1',
-    Contraseña: '1234',
-    Perfil: '3',
+    Descripcion: '1234',
   }, {
     ID: 8,
     Nombre: 'Kent',
-    Apellido: 'Samuelson',
-    Rut: '1-9',
-    Correo: 'trabajador@prueba.cl',
+    FechaInicio: '01-01-2020',
+    FechaTermino: '02-05-2020',
+    Trabajador: 'trabajador@prueba.cl',
     Estado: '1',
-    Contraseña: '1234',
-    Perfil: '3',
+    Descripcion: '1234',
   }, {
     ID: 9,
     Nombre: 'Taylor',
-    Apellido: 'Riley',
-    Rut: '1-9',
-    Correo: 'trabajador@prueba.cl',
+    FechaInicio: '01-01-2020',
+    FechaTermino: '02-05-2020',
+    Trabajador: 'trabajador@prueba.cl',
     Estado: '1',
-    Contraseña: '1234',
-    Perfil: '3',
+    Descripcion: '1234',
   }];
 
   Estado = [{
     ID: '1',
-    Name: 'Habilitado'
+    Name: 'Creado'
   }, {
     ID: '2',
-    Name: 'Deshabilitado'
-  }];
-
-  Perfil = [{
-    ID: '1',
-    Name: 'Trabajador'
-  }, {
-    ID: '2',
-    Name: 'Organizador'
+    Name: 'Finalizado'
   }, {
     ID: '3',
-    Name: 'Administrador'
+    Name: 'Completado'
+  }, {
+    ID: '4',
+    Name: 'Deshabilitado'
   }];
 
   constructor() { }
