@@ -11,6 +11,7 @@ import {
   DxTemplateModule,
   DxTextAreaModule
 } from "devextreme-angular";
+import {ZXingScannerModule} from "@zxing/ngx-scanner";
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import {
     DxButtonModule,
     DxDateBoxModule,
     DxFormModule,
-    DxSelectBoxModule, DxTemplateModule
+    DxSelectBoxModule, DxTemplateModule, ZXingScannerModule
   ]
 })
 export class RegistroEntradaModule { }

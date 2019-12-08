@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { AgendaRoutingModule } from './agenda-routing.module';
 import {ConsultaComponent} from './consulta/consulta.component';
-import {DxSchedulerModule} from "devextreme-angular";
+import {DxSchedulerModule} from 'devextreme-angular';
+import {FullCalendarModule} from '@fullcalendar/angular';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import {DxSchedulerModule} from "devextreme-angular";
   imports: [
     CommonModule,
     AgendaRoutingModule,
-    DxSchedulerModule
+    DxSchedulerModule,
+    FullCalendarModule
   ]
 })
 export class AgendaModule { }
