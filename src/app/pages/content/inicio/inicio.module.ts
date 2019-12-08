@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { InicioRoutingModule } from './inicio-routing.module';
 import {ConsultaComponent} from './consulta/consulta.component';
-import {DxChartModule, DxDataGridModule, DxFormModule} from "devextreme-angular";
+import {DxChartModule, DxDataGridModule, DxFormModule, DxSwitchModule} from "devextreme-angular";
 import {NbChatModule, NbCheckboxModule} from '@nebular/theme';
 
 
@@ -15,6 +15,7 @@ import {NbChatModule, NbCheckboxModule} from '@nebular/theme';
     DxDataGridModule,
     DxFormModule,
     DxChartModule, NbCheckboxModule,
+    DxSwitchModule,
     NbChatModule
   ]
 })

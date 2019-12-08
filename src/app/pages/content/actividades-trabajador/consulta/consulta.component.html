@@ -1,1 +1,49 @@
-<p>consulta actividades trabajador</p>
+<div class="col-md-12 pr-12">
+  <div class="form-group">
+    <div class="demo-container">
+      <div class="div-table">
+        <div id="data-grid-demo">
+          <dx-data-grid id="tableCuentas" [dataSource]="employees" keyExpr="ID" [showBorders]="true">
+            <dxo-header-filter [visible]="true">
+            </dxo-header-filter>
+            <dxo-search-panel [visible]="true" [width]="240" placeholder="Buscar...">
+
+            </dxo-search-panel>
+            <dxo-paging [enabled]="true"></dxo-paging>
+            <dxo-editing mode="form" [allowAdding]="true" [allowUpdating]="true">
+              <dxo-texts saveRowChanges="Guardar" cancelRowChanges="Cancelar" editRow="Editar">
+              </dxo-texts>
+            </dxo-editing>
+            <dxi-column dataField="Nombre">
+            </dxi-column>
+            <dxi-column dataField="FechaInicio" caption="Fecha de inicio" dataType="date">
+            </dxi-column>
+            <dxi-column dataField="FechaTermino" caption="Fecha de termino" dataType="date">
+            </dxi-column>
+            <dxi-column dataField="Estado"
+                        caption="Estado"
+                        [width]="125">
+              <dxo-lookup
+                [dataSource]="Estado"
+                displayExpr="Name"
+                valueExpr="ID">
+              </dxo-lookup>
+            </dxi-column>
+            <dxi-column dataField="Trabajador" caption="Trabajador">
+            </dxi-column>
+            <br>
+            <dxi-column
+              dataField="Descripcion"
+              [visible]="false">
+              <dxo-form-item
+                [colSpan]="2"
+                editorType="dxTextArea"
+                [editorOptions]="{ height: 100 }">
+              </dxo-form-item>
+            </dxi-column>
+          </dx-data-grid>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

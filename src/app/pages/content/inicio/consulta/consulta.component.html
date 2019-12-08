@@ -246,7 +246,16 @@
       <br><br>
     </div>
 
-
+    <div class="form">
+      <div class="dx-fieldset">
+        <div class="dx-field">
+          <div class="dx-field-label">Urgente</div>
+          <div class="dx-field-value">
+            <dx-switch [value]="false"></dx-switch>
+          </div>
+        </div>
+      </div>
+    </div>
 <nb-chat title="Jake" size="medium" status="warning">
   <nb-chat-message *ngFor="let message of messages"
                    [type]="message.type"
@@ -263,6 +272,17 @@
                 [showButton]="false" [dropFiles]="true">
   </nb-chat-form>
 </nb-chat>
+
+    <div class="form">
+      <div class="dx-fieldset">
+        <div class="dx-field">
+          <div class="dx-field-label">Urgente</div>
+          <div class="dx-field-value">
+            <dx-switch [value]="false"></dx-switch>
+          </div>
+        </div>
+      </div>
+    </div>
 <nb-chat title="John" size="medium" status="success">
   <nb-chat-message *ngFor="let message of messages"
                    [type]="message.type"

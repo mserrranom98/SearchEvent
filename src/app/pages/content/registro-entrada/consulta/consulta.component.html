@@ -1,1 +1,55 @@
-<p>consulta registro entrada</p>
+<div class="col-md-12 pr-12">
+  <div class="form-group">
+    <div class="div-fondo">
+      <dx-form id="form"
+               [formData]="employees">
+        <dxi-item itemType="group" cssClass="first-group" [colCount]="4">
+          <dxi-item itemType="group" [colSpan]="3">
+            <dxi-item dataField="NombreEvento" caption="Nombre evento:" [disabled]="true"></dxi-item>
+            <dxi-item dataField="Fecha" caption="Fecha de evento" editorType="dxDateBox"[disabled]="true"></dxi-item>
+            <dxi-item dataField="NombreCliente" caption="Nombre" [disabled]="true"></dxi-item>
+            <dxi-item dataField="Rut" [disabled]="true"></dxi-item>
+          </dxi-item>
+        </dxi-item>
+        <dxi-item itemType="group" cssClass="second-group" [colCount]="2">
+          <dxi-item itemType="group">
+            <dxi-item dataField="TipoEntrada" caption="Entrada" [disabled]="true"></dxi-item>
+            <dxi-item itemType="group">
+              <dx-button
+                class="button-info"
+                text="Registrar"
+                (onClick)="solicitudUpdate()">
+              </dx-button>
+            </dxi-item>
+          </dxi-item></dxi-item>
+
+        <dxi-item itemType="group" cssClass="second-group" [colCount]="2">
+          <dxi-item itemType="group">
+            <dxi-item dataField="Estacionamiento" caption="Estacionamiento" [disabled]="true"></dxi-item>
+            <dxi-item itemType="group">
+              <dx-button
+                class="button-info"
+                text="Registrar"
+                (onClick)="solicitudUpdate()">
+              </dx-button>
+            </dxi-item>
+          </dxi-item></dxi-item>
+
+        <dxi-item itemType="group" cssClass="second-group" [colCount]="2">
+          <dxi-item itemType="group">
+            <dxi-item dataField="Guardarropa" caption="Guardarropa" [disabled]="true"></dxi-item>
+            <dxi-item itemType="group">
+              <dx-button
+                class="button-info"
+                text="Registrar"
+                (onClick)="solicitudUpdate()">
+              </dx-button>
+            </dxi-item>
+          </dxi-item></dxi-item>
+
+      </dx-form>
+
+    </div>
+  </div>
+
+</div>
