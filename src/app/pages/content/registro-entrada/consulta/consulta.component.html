@@ -1,4 +1,28 @@
-<!-- <div class="col-md-12 pr-12">
+<div class="col-md-12 pr-12">
+  <div class="form-group">
+    <div class="div-fondo">
+      <dx-form id="form2"
+               [formData]="employees">
+        <dxi-item itemType="group" cssClass="second-group" [colCount]="2">
+          Escanear codigo QR
+          <dxi-item itemType="group">
+            <dxi-item itemType="group">
+
+              <dx-button
+                class="button-info"
+                text="Escanear codigo por camara"
+                (onClick)="solicitudUpdate()">
+              </dx-button>
+            </dxi-item>
+          </dxi-item></dxi-item>
+      </dx-form>
+
+    </div>
+  </div>
+
+</div>
+
+<div class="col-md-12 pr-12">
   <div class="form-group">
     <div class="div-fondo">
       <dx-form id="form"
@@ -52,7 +76,4 @@
     </div>
   </div>
 
-</div> -->
-<div style="width: 50px; height: 50px">
-  <zxing-scanner></zxing-scanner>
 </div>

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { AgendaRoutingModule } from './agenda-routing.module';
 import {ConsultaComponent} from './consulta/consulta.component';
-import {DxSchedulerModule} from 'devextreme-angular';
+import {DxButtonModule, DxDateBoxModule, DxFormModule, DxSchedulerModule, DxTemplateModule} from 'devextreme-angular';
 import {FullCalendarModule} from '@fullcalendar/angular';
 
 
@@ -12,7 +12,10 @@ import {FullCalendarModule} from '@fullcalendar/angular';
   imports: [
     CommonModule,
     AgendaRoutingModule,
-    DxSchedulerModule,
+    DxButtonModule,
+    DxDateBoxModule,
+    DxFormModule,
+    DxTemplateModule,
     FullCalendarModule
   ]
 })

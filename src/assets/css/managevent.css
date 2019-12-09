@@ -1,6 +1,7 @@
 @import "styles/sesion.css";
 @import "styles/Tablas.css";
 @import "styles/Empresa.css";
+@import "styles/temaFormulario.css";
 
 
 .nb-theme-default nb-layout .layout .layout-container .content .columns nb-layout-column {
