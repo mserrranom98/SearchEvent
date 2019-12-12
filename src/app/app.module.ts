@@ -1,4 +1,3 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +14,8 @@ import {environment} from '../environments/environment';
 import {AuthGuardService} from './shared/services/auth/auth-guard.service';
 
 import * as firebase from 'firebase';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {BrowserModule} from '@angular/platform-browser';
 import {NbChatModule, NbThemeModule, NbLayoutModule} from '@nebular/theme';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
@@ -30,8 +31,10 @@ firebase.initializeApp(environment.firebase);
     SesionComponent,
   ],
   imports: [
+    BrowserAnimationsModule,
+    // BrowserModule,
+    // NoopAnimationsModule,
     HttpClientModule,
-    BrowserModule,
     AppRoutingModule,
     SharedModule,
     ReactiveFormsModule,

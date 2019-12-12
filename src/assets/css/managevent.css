@@ -1,6 +1,10 @@
 @import "styles/sesion.css";
 @import "styles/Tablas.css";
 @import "styles/Empresa.css";
+@import "styles/icons.css";
+@import "styles/helper.scss";
+@import "styles/formulario.scss";
+
 @import "styles/temaFormulario.css";
 
 
