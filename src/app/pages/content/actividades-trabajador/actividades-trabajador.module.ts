@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ActividadesRoutingModule } from './actividades-routing.module';
-import {ConsultaComponent} from './consulta/consulta.component';
+import { ActividadesTrabajadorRoutingModule } from './actividades-trabajador-routing.module';
+import { ConsultaComponent } from './consulta/consulta.component';
 import {DxDataGridModule, DxTagBoxModule, DxTextAreaModule} from "devextreme-angular";
 
 
@@ -13,7 +13,7 @@ import {DxDataGridModule, DxTagBoxModule, DxTextAreaModule} from "devextreme-ang
     DxDataGridModule,
     DxTextAreaModule,
     DxTagBoxModule,
-    ActividadesRoutingModule
+    ActividadesTrabajadorRoutingModule
   ]
 })
-export class ActividadesModule { }
+export class ActividadesTrabajadorModule { }

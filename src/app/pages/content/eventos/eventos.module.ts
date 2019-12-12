@@ -3,13 +3,34 @@ import { CommonModule } from '@angular/common';
 
 import { EventosRoutingModule } from './eventos-routing.module';
 import {ConsultaComponent} from './consulta/consulta.component';
+import {
+  DxCheckBoxModule,
+  DxDataGridModule, DxDateBoxModule, DxFileUploaderModule,
+  DxFormModule, DxGalleryModule, DxNumberBoxModule,
+  DxSelectBoxModule,
+  DxTemplateModule,
+  DxTextAreaModule, DxToolbarModule
+} from "devextreme-angular";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MatStepperModule} from "@angular/material";
 
 
 @NgModule({
   declarations: [ConsultaComponent],
   imports: [
     CommonModule,
-    EventosRoutingModule
+    EventosRoutingModule,
+    MatStepperModule,
+    DxDataGridModule,
+    DxDateBoxModule,
+    DxFileUploaderModule,
+    DxFormModule,
+    DxSelectBoxModule, DxTemplateModule, DxGalleryModule,
+    DxDataGridModule,
+    DxNumberBoxModule,
+    DxCheckBoxModule,
+    DxToolbarModule,
+    DxTextAreaModule
   ]
 })
 export class EventosModule { }

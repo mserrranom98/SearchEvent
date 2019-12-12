@@ -55,6 +55,36 @@
               <img src="../../../../../assets/img/icons/change-password-icon-3.jpg" [width]="20" [height]="20" (click)="openChangePassword(data)" alt="Imagen de cambio de contraseña">
             </div>
           </dx-data-grid>
+          <dx-popup
+            class="popup"
+            [width]="800"
+            [height]="400"
+            [showTitle]="true"
+            title="Cambiar contraseña"
+            [dragEnabled]="false"
+            [closeOnOutsideClick]="true"
+            [(visible)]="popupVisible">
+            <div *dxTemplate="let data of 'content'">
+              <div class="form-group">
+                <dx-form id="form"
+                         [formData]="employees">
+                  <dxi-item itemType="group">
+                    <dxi-item dataField="Contraseña"></dxi-item>
+                    <dxi-item dataField="RContraseña"></dxi-item>
+                  </dxi-item>
+                  <dxi-item itemType="group">
+                    <dx-button
+                      class="button-info"
+                      text="Guardar "
+                      (onClick)="prueba()">
+                    </dx-button>
+                  </dxi-item>
+                </dx-form>
+              </div>
+
+            </div>
+
+          </dx-popup>
         </div>
       </div>
     </div>

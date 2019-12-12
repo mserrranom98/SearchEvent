@@ -10,7 +10,7 @@ import {ChangePasswordComponent} from '../change-password/change-password.compon
   templateUrl: './consulta.component.html'
 })
 export class ConsultaComponent implements OnInit {
-
+  
   private token: string;
   trabajadores: Trabajadores[] = [];
   estados = [
@@ -97,6 +97,10 @@ export class ConsultaComponent implements OnInit {
         e.editorOptions.disabled = true;
       }
     }
+  }
+
+  solicitudUpdate() {
+    this.popupVisible = true;
   }
 
 }

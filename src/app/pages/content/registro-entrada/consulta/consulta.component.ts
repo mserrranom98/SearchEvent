@@ -1,14 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import dayGridPlugin from '@fullcalendar/daygrid';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-consulta',
   templateUrl: './consulta.component.html'
 })
 export class ConsultaComponent implements OnInit {
-
-  calendarPlugins = [dayGridPlugin];
-
   employees = [{
     ID: 1,
     Nombre: 'Estadio',
@@ -281,11 +277,9 @@ export class ConsultaComponent implements OnInit {
     Name: 'Deshabilitado'
   }];
 
-  solicitudUpdate() {
-  }
+  solicitudUpdate() {  }
 
-  constructor() {
-  }
+  constructor() { }
 
   ngOnInit() {
   }

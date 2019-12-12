@@ -31,7 +31,9 @@
               "src/assets/scss/paper-dashboard.scss",
               "node_modules/ngx-toastr/toastr.css",
               "src/assets/css/managevent.css",
-              "src/styles.css"
+              "node_modules/@nebular/theme/styles/prebuilt/default.css",
+              "node_modules/@fullcalendar/core/main.css",
+              "node_modules/@fullcalendar/daygrid/main.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",

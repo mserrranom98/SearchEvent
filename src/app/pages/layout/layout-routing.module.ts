@@ -9,4 +9,7 @@ export const LayoutRoutes: Routes = [
   { path: 'actividades', loadChildren: './pages/content/actividades/actividades.module#ActividadesModule' },
   { path: 'agenda', loadChildren: './pages/content/agenda/agenda.module#AgendaModule' },
   { path: 'estadisticas', loadChildren: './pages/content/estadisticas/estadisticas.module#EstadisticasModule' },
+  { path: 'inicio', loadChildren: './pages/content/inicio/inicio.module#InicioModule' },
+  { path: 'registro-entrada', loadChildren: './pages/content/registro-entrada/registro-entrada.module#RegistroEntradaModule' },
+  { path: 'actividades-trabajador', loadChildren: './pages/content/actividades-trabajador/actividades-trabajador.module#ActividadesTrabajadorModule' }
 ];

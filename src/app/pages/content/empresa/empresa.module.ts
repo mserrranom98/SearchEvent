@@ -9,7 +9,7 @@ import {
   DxFormModule,
   DxPopupModule,
   DxSelectBoxModule, DxTemplateModule,
-  DxTextAreaModule
+  DxTextAreaModule,
 } from "devextreme-angular";
 
 

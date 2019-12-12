@@ -7,6 +7,7 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
 import {DxDataGridModule, DxFormModule} from 'devextreme-angular';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import {MatDialogModule} from '@angular/material';
+import {DxButtonModule, DxDataGridModule, DxFormModule, DxPopupModule} from 'devextreme-angular';
 
 @NgModule({
   declarations: [ConsultaComponent, ChangePasswordComponent],
@@ -18,5 +19,9 @@ import {MatDialogModule} from '@angular/material';
     DxFormModule
   ],
   entryComponents: [ChangePasswordComponent]
+    DxFormModule,
+    DxPopupModule,
+    DxButtonModule
+  ]
 })
 export class CuentasModule { }

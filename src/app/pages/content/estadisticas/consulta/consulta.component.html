@@ -1,1 +1,103 @@
-<p>consulta works!</p>
+<div class="col-md-12 pr-12"  >
+    <div class="form-group">
+      <select name="Eventos" class="form-control" value="Eventos">
+        <option>Evento 1</option>
+        <option>Evento 2</option>
+        <option>Evento 3</option>
+      </select>
+    </div>
+
+    <div class="div-table">
+
+      <dx-chart
+        id="chart2"
+        [dataSource]="countriesInfo">
+        <dxi-series
+          *ngFor="let energy of energySources"
+          [valueField]="energy.value"
+          [name]="energy.name">
+        </dxi-series>
+        <dxo-common-series-settings
+          argumentField="country"
+          type="spline">
+          <dxo-point hoverMode="allArgumentPoints"></dxo-point>
+        </dxo-common-series-settings>
+        <dxo-argument-axis
+          [valueMarginsEnabled]="false"
+          discreteAxisDivisionMode="crossLabels">
+          <dxo-grid [visible]="true"></dxo-grid>
+        </dxo-argument-axis>
+        <dxo-crosshair
+          [enabled]="true"
+          color="#949494"
+          [width]="3"
+          dashStyle="dot">
+          <dxo-label
+            [visible]="true"
+            backgroundColor="#949494">
+            <dxo-font
+              color="#fff"
+              [size]="12">
+            </dxo-font>
+          </dxo-label>
+        </dxo-crosshair>
+        <dxo-legend
+          verticalAlignment="bottom"
+          horizontalAlignment="center"
+          itemTextPosition="bottom">
+        </dxo-legend>
+        <dxo-title text="Venta de entradas">
+        </dxo-title>
+        <dxo-tooltip [enabled]="true"
+                     [customizeTooltip]="customizeTooltip">
+        </dxo-tooltip>
+        <dxo-export [enabled]="true"></dxo-export>
+      </dx-chart>
+      <br>
+
+      <dx-chart
+        id="chart"
+        [dataSource]="countriesInfo2">
+        <dxi-series
+          *ngFor="let energy of energySources2"
+          [valueField]="energy.value"
+          [name]="energy.name">
+        </dxi-series>
+        <dxo-common-series-settings
+          argumentField="country"
+          type="spline">
+          <dxo-point hoverMode="allArgumentPoints"></dxo-point>
+        </dxo-common-series-settings>
+        <dxo-argument-axis
+          [valueMarginsEnabled]="false"
+          discreteAxisDivisionMode="crossLabels">
+          <dxo-grid [visible]="true"></dxo-grid>
+        </dxo-argument-axis>
+        <dxo-crosshair
+          [enabled]="true"
+          color="#949494"
+          [width]="3"
+          dashStyle="dot">
+          <dxo-label
+            [visible]="true"
+            backgroundColor="#949494">
+            <dxo-font
+              color="#fff"
+              [size]="12">
+            </dxo-font>
+          </dxo-label>
+        </dxo-crosshair>
+        <dxo-legend
+          verticalAlignment="bottom"
+          horizontalAlignment="center"
+          itemTextPosition="bottom">
+        </dxo-legend>
+        <dxo-title text="Venta servicios adicionales">
+        </dxo-title>
+        <dxo-tooltip [enabled]="true"
+                     [customizeTooltip]="customizeTooltip">
+        </dxo-tooltip>
+        <dxo-export [enabled]="true"></dxo-export>
+      </dx-chart>
+    </div>
+</div>

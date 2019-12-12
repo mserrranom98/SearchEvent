@@ -1,1 +1,303 @@
-<p>consulta works!</p>
+<div class="content">
+  <div class="col-md-3 pr-3">
+    <div class="form-group">
+      <select name="Eventos" class="form-control" value="Eventos">
+        <option>Evento 1</option>
+        <option>Evento 2</option>
+        <option>Evento 3</option>
+      </select>
+    </div>
+  </div>
+  <br>
+
+
+  <div class="row">
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-5 col-md-4">
+              <div class="icon-big text-center icon-warning">
+                <i class="nc-icon nc-check-2 text-success"></i>
+              </div>
+            </div>
+            <div class="col-7 col-md-8">
+              <div class="numbers">
+                <p class="card-category">Actividades finalizadas</p>
+                <p class="card-title">160
+                <p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer ">
+          <hr>
+          <div class="stats">
+            <i class="fa fa-refresh"></i> Update Now
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-5 col-md-4">
+              <div class="icon-big text-center icon-warning">
+                <i class="nc-icon nc-alert-circle-i text-warning"></i>
+              </div>
+            </div>
+            <div class="col-7 col-md-8">
+              <div class="numbers">
+                <p class="card-category">Actividades pendientes</p>
+                <p class="card-title">30
+                <p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer ">
+          <hr>
+          <div class="stats">
+            <i class="fa fa-calendar-o"></i> Last day
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-5 col-md-4">
+              <div class="icon-big text-center icon-warning">
+                <i class="nc-button-play text-warning"></i>
+              </div>
+            </div>
+            <div class="col-7 col-md-8">
+              <div class="numbers">
+                <p class="card-category">Actividades completadas</p>
+                <p class="card-title">160
+                <p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer ">
+          <hr>
+          <div class="stats">
+            <i class="fa fa-refresh"></i> Update Now
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-5 col-md-4">
+              <div class="icon-big text-center icon-warning">
+                <i class="nc-icon nc-time-alarm text-danger"></i>
+              </div>
+            </div>
+            <div class="col-7 col-md-8">
+              <div class="numbers">
+                <p class="card-category">Actividades problemas</p>
+                <p class="card-title">3
+                <p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer ">
+          <hr>
+          <div class="stats">
+            <i class="fa fa-clock-o"></i> In the last hour
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="div-table">
+
+    <dx-chart
+      id="chart2"
+      [dataSource]="countriesInfo">
+      <dxi-series
+        *ngFor="let energy of energySources"
+        [valueField]="energy.value"
+        [name]="energy.name">
+      </dxi-series>
+      <dxo-common-series-settings
+        argumentField="country"
+        type="spline">
+        <dxo-point hoverMode="allArgumentPoints"></dxo-point>
+      </dxo-common-series-settings>
+      <dxo-argument-axis
+        [valueMarginsEnabled]="false"
+        discreteAxisDivisionMode="crossLabels">
+        <dxo-grid [visible]="true"></dxo-grid>
+      </dxo-argument-axis>
+      <dxo-crosshair
+        [enabled]="true"
+        color="#949494"
+        [width]="3"
+        dashStyle="dot">
+        <dxo-label
+          [visible]="true"
+          backgroundColor="#949494">
+          <dxo-font
+            color="#fff"
+            [size]="12">
+          </dxo-font>
+        </dxo-label>
+      </dxo-crosshair>
+      <dxo-legend
+        verticalAlignment="bottom"
+        horizontalAlignment="center"
+        itemTextPosition="bottom">
+      </dxo-legend>
+      <dxo-title text="Venta de entradas">
+      </dxo-title>
+      <dxo-tooltip [enabled]="true"
+                   [customizeTooltip]="customizeTooltip">
+      </dxo-tooltip>
+      <dxo-export [enabled]="true"></dxo-export>
+    </dx-chart>
+    <br>
+
+    <dx-chart
+      id="chart"
+      [dataSource]="countriesInfo2">
+      <dxi-series
+        *ngFor="let energy of energySources2"
+        [valueField]="energy.value"
+        [name]="energy.name">
+      </dxi-series>
+      <dxo-common-series-settings
+        argumentField="country"
+        type="spline">
+        <dxo-point hoverMode="allArgumentPoints"></dxo-point>
+      </dxo-common-series-settings>
+      <dxo-argument-axis
+        [valueMarginsEnabled]="false"
+        discreteAxisDivisionMode="crossLabels">
+        <dxo-grid [visible]="true"></dxo-grid>
+      </dxo-argument-axis>
+      <dxo-crosshair
+        [enabled]="true"
+        color="#949494"
+        [width]="3"
+        dashStyle="dot">
+        <dxo-label
+          [visible]="true"
+          backgroundColor="#949494">
+          <dxo-font
+            color="#fff"
+            [size]="12">
+          </dxo-font>
+        </dxo-label>
+      </dxo-crosshair>
+      <dxo-legend
+        verticalAlignment="bottom"
+        horizontalAlignment="center"
+        itemTextPosition="bottom">
+      </dxo-legend>
+      <dxo-title text="Venta servicios adicionales">
+      </dxo-title>
+      <dxo-tooltip [enabled]="true"
+                   [customizeTooltip]="customizeTooltip">
+      </dxo-tooltip>
+      <dxo-export [enabled]="true"></dxo-export>
+    </dx-chart>
+
+    <div id="data-grid-demo">
+      <dx-data-grid id="tableCuentas" [dataSource]="employees" keyExpr="ID" [showBorders]="true">
+        <dxo-header-filter [visible]="true">
+        </dxo-header-filter>
+        <dxo-search-panel [visible]="true" [width]="240" placeholder="Buscar...">
+
+        </dxo-search-panel>
+        <dxo-paging [enabled]="true"></dxo-paging>
+        <dxo-editing mode="form" [allowAdding]="true" [allowUpdating]="true">
+          <dxo-texts cancelRowChanges="Cancelar" editRow="Ir">
+          </dxo-texts>
+        </dxo-editing>
+        <dxi-column dataField="NombreActividad" caption="Nombre actividad" disabled="true">
+        </dxi-column>
+        <dxi-column dataField="FechaInicio" caption="Fecha inicio" disabled="true">
+        </dxi-column>
+        <dxi-column dataField="FechaTermino" caption="Fecha termino" disabled="true">
+        </dxi-column>
+        <dxi-column dataField="Trabajador" disabled="true">
+        </dxi-column>
+        <dxi-column dataField="estado"
+                    caption="Estado"
+                    [width]="125" disabled="true">
+          <dxo-lookup
+            [dataSource]="Estado"
+            displayExpr="Name"
+            valueExpr="ID">
+          </dxo-lookup>
+        </dxi-column>
+        >
+        <dxi-column dataField="Comentarios" [visible]="true">
+        </dxi-column>
+      </dx-data-grid>
+      <br><br>
+    </div>
+
+    <div class="form">
+      <div class="dx-fieldset">
+        <div class="dx-field">
+          <div class="dx-field-label">Urgente</div>
+          <div class="dx-field-value">
+            <dx-switch [value]="false"></dx-switch>
+          </div>
+        </div>
+      </div>
+    </div>
+<nb-chat title="Jake" size="medium" status="warning">
+  <nb-chat-message *ngFor="let message of messages"
+                   [type]="message.type"
+                   [message]="message.text"
+                   [reply]="message.reply"
+                   [sender]="message.user.name"
+                   [date]="message.date"
+                   [files]="message.files"
+                   [quote]="message.quote"
+                   [latitude]="message.latitude"
+                   [longitude]="message.longitude"
+                   [avatar]="message.user.avatar"></nb-chat-message>
+  <nb-chat-form (send)="sendMessage($event, 'Jake', 'http://www.reactiongifs.com/r/wnd1.gif', true)"
+                [showButton]="false" [dropFiles]="true">
+  </nb-chat-form>
+</nb-chat>
+
+    <div class="form">
+      <div class="dx-fieldset">
+        <div class="dx-field">
+          <div class="dx-field-label">Urgente</div>
+          <div class="dx-field-value">
+            <dx-switch [value]="false"></dx-switch>
+          </div>
+        </div>
+      </div>
+    </div>
+<nb-chat title="John" size="medium" status="success">
+  <nb-chat-message *ngFor="let message of messages"
+                   [type]="message.type"
+                   [message]="message.text"
+                   [reply]="!message.reply"
+                   [sender]="message.user.name"
+                   [date]="message.date"
+                   [files]="message.files"
+                   [quote]="message.quote"
+                   [latitude]="message.latitude"
+                   [longitude]="message.longitude"
+                   [avatar]="message.user.avatar"></nb-chat-message>
+  <nb-chat-form (send)="sendMessage($event, 'John', 'https://i.gifer.com/no.gif', false)" [showButton]="false"
+                [dropFiles]="true">
+  </nb-chat-form>
+</nb-chat>
+  </div>
+</div>

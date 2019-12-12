@@ -1,1 +1,53 @@
-<p>consulta works!</p>
+<div class="div-table">
+  <h2>Agenda</h2>
+<full-calendar defaultView="dayGridMonth" locale="es" themeSystem="bootstrap" [plugins]="calendarPlugins"></full-calendar>
+</div>
+
+<div class="col-md-12 pr-12">
+  <div class="form-group">
+    <div class="div-fondo">
+      <dx-form id="form"
+               [formData]="employees">
+        <dxi-item itemType="group" cssClass="first-group" [colCount]="4">
+          <dxi-item itemType="group" [colSpan]="3">
+            <dxi-item dataField="NombreEvento" caption="Nombre del evento" [disabled]="true"></dxi-item>
+            <dxi-item dataField="Establecimiento" [disabled]="true"></dxi-item>
+            <dxi-item dataField="FechaInicio" caption="Fecha de inicio" editorType="dxDateBox" [disabled]="true"></dxi-item>
+            <dxi-item dataField="FechaTermino" capcion="Fecha de termino"  editorType="dxDateBox" [disabled]="true"></dxi-item>
+          </dxi-item>
+        </dxi-item>
+        <dxi-item itemType="group">
+          <dx-button
+            class="button-info"
+            text="Cerrar"
+            (onClick)="solicitudUpdate()">
+          </dx-button>
+        </dxi-item>
+      </dx-form>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-12 pr-12">
+  <div class="form-group">
+    <div class="div-fondo">
+      <dx-form id="form"
+               [formData]="employees">
+        <dxi-item itemType="group" cssClass="first-group" [colCount]="4">
+          <dxi-item itemType="group" [colSpan]="3">
+            <dxi-item dataField="NombreActividad" caption="Nombre de actividad" [disabled]="true"></dxi-item>
+            <dxi-item dataField="FechaInicio" caption="Fecha de inicio" editorType="dxDateBox" [disabled]="true"></dxi-item>
+            <dxi-item dataField="FechaTermino" capcion="Fecha de termino"  editorType="dxDateBox" [disabled]="true"></dxi-item>
+          </dxi-item>
+        </dxi-item>
+        <dxi-item itemType="group">
+          <dx-button
+            class="button-info"
+            text="Cerrar"
+            (onClick)="solicitudUpdate()">
+          </dx-button>
+        </dxi-item>
+      </dx-form>
+    </div>
+  </div>
+</div>

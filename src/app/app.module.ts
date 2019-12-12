@@ -16,14 +16,19 @@ import {AuthGuardService} from './shared/services/auth/auth-guard.service';
 import * as firebase from 'firebase';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {BrowserModule} from '@angular/platform-browser';
+import {NbChatModule, NbThemeModule, NbLayoutModule} from '@nebular/theme';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
+import {MatStepperModule} from '@angular/material';
 
 firebase.initializeApp(environment.firebase);
+
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    SesionComponent
+    SesionComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -35,6 +40,15 @@ firebase.initializeApp(environment.firebase);
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    AngularFireAuthModule,
+    NbThemeModule.forRoot(),
+    NbChatModule.forRoot({ messageGoogleMapKey: 'MAP_KEY' }),
+    BrowserAnimationsModule,
+    NbThemeModule.forRoot({ name: 'default' }),
+    NbLayoutModule,
+    NbEvaIconsModule,
+    BrowserAnimationsModule,
+    MatStepperModule,
     AngularFireAuthModule
   ],
   providers: [
