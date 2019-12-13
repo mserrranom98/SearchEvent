@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ComentariosComponent} from '../comentarios/comentarios.component';
+import {MatDialog} from '@angular/material';
 
 @Component({
   selector: 'app-consulta',
@@ -92,91 +94,51 @@ export class ConsultaComponent implements OnInit {
     Guardarropa: 37.8
   }];
 
-  employees = [{
-    ID: 1,
-    NombreActividad: 'John',
-    FechaInicio: 'Heart',
-    FechaTermino: '1-9',
-    Trabajador: 'admin@prueba.cl',
-    Estado: '1',
-  }, {
-    ID: 2,
-    NombreActividad: 'Robert',
-    FechaInicio: 'Reagan',
-    FechaTermino: '1-9',
-    Trabajador: 'trabajador@prueba.cl',
-    Estado: '2',
-  }, {
-    ID: 3,
-    NombreActividad: 'Greta',
-    FechaInicio: 'Sis',
-    FechaTermino: '1-9',
-    Trabajador: 'trabajador@prueba.cl',
-    Estado: '1',
-  }, {
-    ID: 4,
-    NombreActividad: 'Brett',
-    FechaInicio: 'Wade',
-    FechaTermino: '1-9',
-    Trabajador: 'admin@prueba.cl',
-    Estado: '1',
-  }, {
-    ID: 5,
-    NombreActividad: 'Sandra',
-    FechaInicio: 'Johnson',
-    FechaTermino: '1-9',
-    Trabajador: 'organizador@prueba.cl',
-    Estado: '1',
-  }, {
-    ID: 6,
-    NombreActividad: 'Kevin',
-    FechaInicio: 'Carter',
-    FechaTermino: '1-9',
-    Trabajador: 'trabajador@prueba.cl',
-    Estado: '2',
-  }, {
-    ID: 7,
-    NombreActividad: 'Cynthia',
-    FechaInicio: 'Stanwick',
-    FechaTermino: '1-9',
-    Trabajador: 'trabajador@prueba.cl',
-    Estado: '1',
-  }, {
-    ID: 8,
-    NombreActividad: 'Kent',
-    FechaInicio: 'Samuelson',
-    FechaTermino: '1-9',
-    Trabajador: 'Kent',
-    Estado: '1',
-  }, {
-    ID: 9,
-    NombreActividad: 'Taylor',
-    FechaInicio: 'Riley',
-    FechaTermino: '1-9',
-    Trabajador: 'Taylor',
-    Estado: '1'
-  }];
+  actividades = [
+    {
+      NombreActividad: 'Preparar luces',
+      FechaInicio: '2019-01-02 08:30',
+      FechaTermino: '2019-01-05 12:30',
+      Trabajador: 'Marcelo Grageda Gonzalez',
+      estado: 'Finalizado',
+      comentarios: []
+    },
+    {
+      NombreActividad: 'Registar entrada a estacionamiento',
+      FechaInicio: '2019-01-02 20:30',
+      FechaTermino: '2019-01-08 22:30',
+      Trabajador: 'Marcelo Grageda Gonzalez',
+      estado: 'Pendiente',
+      comentarios: []
+    },
+    {
+      NombreActividad: 'Registar entrada al evento',
+      FechaInicio: '2019-01-02 20:30',
+      FechaTermino: '2019-01-05 22:30',
+      Trabajador: 'Marcelo Grageda Gonzalez',
+      estado: 'Pendiente',
+      comentarios: []
+    }
+  ];
 
   Estado = [{
-    ID: '1',
-    Name: 'Habilitado'
+    ID: 'Pendiente',
+    Name: 'Pendiente'
   }, {
-    ID: '2',
-    Name: 'Deshabilitado'
+    ID: 'Finalizado',
+    Name: 'Finalizado'
   }];
 
-  Perfil = [{
-    ID: '1',
-    Name: 'Trabajador'
-  }, {
-    ID: '2',
-    Name: 'Organizador'
-  }, {
-    ID: '3',
-    Name: 'Administrador'
-  }];
+  Trabajadores = [
+    {
+      ID: 'Marcelo Grageda Gonzalez',
+      Name: 'Marcelo Grageda Gonzalez'
+    }
+  ];
 
-  constructor() { }
+  constructor(
+    public dialog: MatDialog
+  ) { }
 
   ngOnInit() {
   }
@@ -185,25 +147,7 @@ export class ConsultaComponent implements OnInit {
     return arg.valueText;
   }
 
-  sendMessage(event: any, userName: string, avatar: string, reply: boolean) {
-    const files = !event.files ? [] : event.files.map((file) => {
-      return {
-        url: file.src,
-        type: file.type,
-        icon: 'file-text-outline',
-      };
-    });
-
-    this.messages.push({
-      text: event.message,
-      date: new Date(),
-      reply,
-      type: files.length ? 'file' : 'text',
-      files,
-      user: {
-        name: userName,
-        avatar,
-      },
-    });
+  openComentarios(event) {
+    this.dialog.open(ComentariosComponent, {data: event.data});
   }
 }

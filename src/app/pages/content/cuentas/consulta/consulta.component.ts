@@ -99,8 +99,4 @@ export class ConsultaComponent implements OnInit {
     }
   }
 
-  solicitudUpdate() {
-    this.popupVisible = true;
-  }
-
 }

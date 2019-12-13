@@ -3,7 +3,6 @@
   <div class="form-group">
     <div class="demo-container">
       <div class="div-table">
-        <button (click)="openChangePassword({data: {correo: 'admin@managevent.cl', rut: '253552913'}})">asd</button>
 
         <div *ngIf="viewTable" id="data-grid-demo">
           <dx-data-grid id="tableCuentas"
@@ -30,11 +29,9 @@
             </dxi-column>
             <dxi-column dataField="nombres" caption="Nombres">
               <dxi-validation-rule type="required" message="El nombre es requerido"></dxi-validation-rule>
-              <dxi-validation-rule type="stringLength" [min]="10" message="Numero de caracteres: 10 al 13"></dxi-validation-rule>
             </dxi-column>
             <dxi-column dataField="apellidos" caption="Apellidos">
               <dxi-validation-rule type="required" message="Los apellidos son requeridos"></dxi-validation-rule>
-              <dxi-validation-rule type="pattern" [min]="10" message="Numero de caracteres: 10 al 13"></dxi-validation-rule>
             </dxi-column>
             <dxi-column dataField="correo" caption="Correo">
               <dxi-validation-rule type="required" message="El correo es requerido"></dxi-validation-rule>
@@ -50,41 +47,11 @@
               <dxo-lookup [dataSource]="perfiles" displayExpr="nombre" valueExpr="id">
               </dxo-lookup>
             </dxi-column>
-            <dxi-column dataField="changePassword" caption="Cambiar Contraseña" alignment="center" [allowFiltering]="false" [allowSorting]="false" cellTemplate="password"></dxi-column>
+            <dxi-column dataField="changePassword" [formItem]="{visible: false}" caption="Cambiar Contraseña" alignment="center" [allowFiltering]="false" [allowSorting]="false" cellTemplate="password"></dxi-column>
             <div *dxTemplate="let data of 'password'">
               <img src="../../../../../assets/img/icons/change-password-icon-3.jpg" [width]="20" [height]="20" (click)="openChangePassword(data)" alt="Imagen de cambio de contraseña">
             </div>
           </dx-data-grid>
-          <dx-popup
-            class="popup"
-            [width]="800"
-            [height]="400"
-            [showTitle]="true"
-            title="Cambiar contraseña"
-            [dragEnabled]="false"
-            [closeOnOutsideClick]="true"
-            [(visible)]="popupVisible">
-            <div *dxTemplate="let data of 'content'">
-              <div class="form-group">
-                <dx-form id="form"
-                         [formData]="employees">
-                  <dxi-item itemType="group">
-                    <dxi-item dataField="Contraseña"></dxi-item>
-                    <dxi-item dataField="RContraseña"></dxi-item>
-                  </dxi-item>
-                  <dxi-item itemType="group">
-                    <dx-button
-                      class="button-info"
-                      text="Guardar "
-                      (onClick)="prueba()">
-                    </dx-button>
-                  </dxi-item>
-                </dx-form>
-              </div>
-
-            </div>
-
-          </dx-popup>
         </div>
       </div>
     </div>

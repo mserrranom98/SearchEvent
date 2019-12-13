@@ -2,7 +2,7 @@
   <div class="form-group">
     <div class="div-fondo">
     <dx-form id="form"
-             [formData]="employees">
+             [formData]="empresa">
       <dxi-item itemType="group" cssClass="first-group" [colCount]="4">
         <dxi-item>
           <div cssClass="form-avatar">
@@ -18,7 +18,7 @@
         </dxi-item>
         <dxi-item itemType="group" [colSpan]="3">
           <dxi-item dataField="Nombre" [disabled]="true"></dxi-item>
-          <dxi-item dataField="Ocupación" [disabled]="true"></dxi-item>
+          <dxi-item dataField="Ocupacion" [disabled]="true"></dxi-item>
           <dxi-item dataField="Correo" [disabled]="true"></dxi-item>
           <dxi-item dataField="Encargado" [disabled]="true"></dxi-item>
         </dxi-item>
@@ -30,8 +30,7 @@
 
         </dxi-item>
         <dxi-item itemType="group">
-          <dxi-item dataField="Region" editorType="dxSelectBox" [editorOptions]="{ items: states }"
-                    [disabled]="true"></dxi-item>
+          <dxi-item dataField="Region" [disabled]="true"></dxi-item>
           <dxi-item dataField="Telefono" [label]="{text: 'Telefono'}"
                     [editorOptions]="{ mask: '+56 900000000'}"></dxi-item>
         </dxi-item>

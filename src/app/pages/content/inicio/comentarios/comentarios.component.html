@@ -1,0 +1,26 @@
+<div class="form">
+  <div class="dx-fieldset">
+    <div class="dx-field">
+      <div class="dx-field-label">Urgente</div>
+      <div class="dx-field-value">
+        <dx-switch [value]="false"></dx-switch>
+      </div>
+    </div>
+  </div>
+</div>
+<nb-chat title="Jake" size="medium" status="warning">
+  <nb-chat-message *ngFor="let message of messages"
+                   [type]="message.type"
+                   [message]="message.text"
+                   [reply]="message.reply"
+                   [sender]="message.user.name"
+                   [date]="message.date"
+                   [files]="message.files"
+                   [quote]="message.quote"
+                   [latitude]="message.latitude"
+                   [longitude]="message.longitude"
+                   [avatar]="message.user.avatar"></nb-chat-message>
+  <nb-chat-form (send)="sendMessage($event, 'Jake', 'http://www.reactiongifs.com/r/wnd1.gif', true)"
+                [showButton]="false" [dropFiles]="true">
+  </nb-chat-form>
+</nb-chat>

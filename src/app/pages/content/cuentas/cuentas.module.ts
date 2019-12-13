@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { CuentasRoutingModule } from './cuentas-routing.module';
 import { ConsultaComponent } from './consulta/consulta.component';
 import {AngularFireAuthModule} from '@angular/fire/auth';
-import {DxDataGridModule, DxFormModule} from 'devextreme-angular';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import {MatDialogModule} from '@angular/material';
 import {DxButtonModule, DxDataGridModule, DxFormModule, DxPopupModule} from 'devextreme-angular';
@@ -16,12 +15,11 @@ import {DxButtonModule, DxDataGridModule, DxFormModule, DxPopupModule} from 'dev
     CuentasRoutingModule,
     DxDataGridModule,
     MatDialogModule,
-    DxFormModule
-  ],
-  entryComponents: [ChangePasswordComponent]
+    DxFormModule,
     DxFormModule,
     DxPopupModule,
     DxButtonModule
-  ]
+  ],
+  entryComponents: [ChangePasswordComponent]
 })
 export class CuentasModule { }

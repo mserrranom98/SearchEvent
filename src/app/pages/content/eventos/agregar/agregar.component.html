@@ -1,0 +1,192 @@
+<div class="div-table">
+  <mat-horizontal-stepper >
+
+    <mat-step label="Datos del evento" data-color="black">
+      <dx-form id="form"
+               [formData]="employees">
+        <dxi-item itemType="group" cssClass="first-group" [colCount]="2">
+
+          <dxi-item itemType="group" [colSpan]="2">
+            <dxi-item dataField="Nombre" ></dxi-item>
+            <dxi-item itemType="group">
+              <div id="fileuploader-container">
+                <dx-file-uploader
+                  selectButtonText="Seleccionar imagen"
+                  labelText=""
+                  accept="image/*"
+                  uploadMode="useForm">
+                </dx-file-uploader>
+              </div>
+            </dxi-item>
+          </dxi-item>
+        </dxi-item>
+        <dxi-item itemType="group" cssClass="second-group">
+          <dxi-item itemType="group" [colSpan]="2">
+            <dxi-item dataField="Categoria" editorType="dxSelectBox" [editorOptions]="{ items: states }"
+            ></dxi-item>
+            <dxi-item dataField="Establecimiento" editorType="dxSelectBox" [editorOptions]="{ items: states }"
+            ></dxi-item>
+            <dxi-item dataField="Fecha de incio" editorType="dxDateBox" [editorOptions]="{ width: '100%'}"></dxi-item>
+            <dxi-item dataField="Fecha de publicacion" editorType="dxDateBox" [editorOptions]="{ width: '100%'}"></dxi-item>
+            <dxi-item dataField="Fecha de termino" editorType="dxDateBox" [editorOptions]="{ width: '100%'}"></dxi-item>
+          </dxi-item>
+          <dxi-item dataField="Descripcion" [colSpan]="2" editorType="dxTextArea"
+                    [editorOptions]="{ height: 140 }"></dxi-item>
+        </dxi-item>
+      </dx-form>
+      <div>
+        <button mat-button matStepperNext class="btn btn-warning">Siguiente</button>
+      </div>
+    </mat-step>
+
+    <mat-step label="Datos de las entradas">
+      <div class="options">
+        <div class="option">
+          <dx-check-box
+            text="VIP"
+            [(value)]="allowDeleting">
+          </dx-check-box>
+        </div><br>
+        <div class="option">
+          <span>Capacidad:</span>
+          <dx-number-box
+            [max]="550"
+            disabled="true"
+            [(value)]="width"></dx-number-box>
+          <span>Ingrese capacidad:</span>
+          <dx-number-box
+            [max]="550"
+            [(value)]="width"></dx-number-box>
+          <span>Ingrese precio:</span>
+          <dx-number-box
+            [max]="550"
+            [(value)]="width"></dx-number-box>
+        </div><br>
+        <div class="option">
+          <dx-check-box
+            text="Galeria"
+            [(value)]="allowDeleting">
+          </dx-check-box>
+        </div><br>
+        <div class="option">
+          <span>Capacidad:</span>
+          <dx-number-box
+            [max]="550"
+            disabled="true"
+            [(value)]="width"></dx-number-box>
+          <span>Ingrese capacidad:</span>
+          <dx-number-box
+            [max]="550"
+            [(value)]="width"></dx-number-box>
+          <span>Ingrese precio:</span>
+          <dx-number-box
+            [max]="550"
+            [(value)]="width"></dx-number-box>
+        </div><br>
+        <div class="option">
+          <dx-check-box
+            text="Platea"
+            [(value)]="allowDeleting">
+          </dx-check-box>
+        </div><br>
+        <div class="option">
+          <span>Capacidad:</span>
+          <dx-number-box
+            [max]="550"
+            disabled="true"
+            [(value)]="width"></dx-number-box>
+          <span>Ingrese capacidad:</span>
+          <dx-number-box
+            [max]="550"
+            [(value)]="width"></dx-number-box>
+          <span>Ingrese precio:</span>
+          <dx-number-box
+            [max]="550"
+            [(value)]="width"></dx-number-box>
+        </div>
+      </div>
+      <div>
+        <button mat-button matStepperPrevious class="btn btn-outline-warning">Anterior</button>
+        <button mat-button matStepperNext class="btn btn-warning">Siguiente</button>
+      </div>
+    </mat-step>
+
+    <mat-step label="Promociones">
+      <dx-data-grid
+        id="gridContainer"
+        [dataSource]="customers"
+        [allowColumnReordering]="true"
+        [showBorders]="true">
+        <dxo-editing mode="form" [allowAdding]="true" [allowUpdating]="true">
+          <dxo-texts saveRowChanges="Guardar" cancelRowChanges="Cancelar" editRow="Editar">
+          </dxo-texts>
+        </dxo-editing>
+        <dxi-column dataField="Sector"  [groupIndex]="0"></dxi-column>
+        <dxi-column dataField="FechaInicio" dataType="date"  caption="Fecha de inicio"></dxi-column>
+        <dxi-column dataField="FechaTermino" dataType="date"  caption="Fecha de termino"></dxi-column>
+        <dxi-column dataField="Cantidad" caption="Cantidad"></dxi-column>
+        <dxi-column dataField="Precio" caption="Precio"></dxi-column>
+
+        <dxo-search-panel [visible]="true"></dxo-search-panel>
+        <dxo-paging [pageSize]="10"></dxo-paging>
+        <dxo-group-panel [visible]="true"></dxo-group-panel>
+        <dxo-grouping #expand [autoExpandAll]="true"></dxo-grouping>
+      </dx-data-grid>
+      <div>
+        <button mat-button matStepperPrevious class="btn btn-outline-warning">Anterior</button>
+        <button mat-button matStepperNext class="btn btn-warning">Siguiente</button>
+      </div>
+    </mat-step>
+
+    <mat-step label="Servicios adicionales">
+      <div class="options">
+        <div class="option">
+          <dx-check-box
+            text="Estacionamiento"
+            [(value)]="allowDeleting">
+          </dx-check-box>
+        </div><br>
+        <div class="option">
+          <span>Capacidad:</span>
+          <dx-number-box
+            [max]="550"
+            disabled="true"
+            [(value)]="width"></dx-number-box>
+          <span>Ingrese capacidad:</span>
+          <dx-number-box
+            [max]="550"
+            [(value)]="width"></dx-number-box>
+          <span>Ingrese precio:</span>
+          <dx-number-box
+            [max]="550"
+            [(value)]="width"></dx-number-box>
+        </div><br>
+        <div class="option">
+          <dx-check-box
+            text="Guardarropa"
+            [(value)]="allowDeleting">
+          </dx-check-box>
+        </div><br>
+        <div class="option">
+          <span>Capacidad:</span>
+          <dx-number-box
+            [max]="550"
+            disabled="true"
+            [(value)]="width"></dx-number-box>
+          <span>Ingrese capacidad:</span>
+          <dx-number-box
+            [max]="550"
+            [(value)]="width"></dx-number-box>
+          <span>Ingrese precio:</span>
+          <dx-number-box
+            [max]="550"
+            [(value)]="width"></dx-number-box>
+        </div>
+      </div>
+      <div>
+        <button mat-button matStepperPrevious class="btn btn-outline-warning">Anterior</button>
+        <button mat-button matStepperNext class="btn btn-warning">Siguiente</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>

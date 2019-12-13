@@ -17,7 +17,6 @@ import * as firebase from 'firebase';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {BrowserModule} from '@angular/platform-browser';
 import {NbChatModule, NbThemeModule, NbLayoutModule} from '@nebular/theme';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import {MatStepperModule} from '@angular/material';
 

@@ -5,10 +5,12 @@ import { InicioRoutingModule } from './inicio-routing.module';
 import {ConsultaComponent} from './consulta/consulta.component';
 import {DxChartModule, DxDataGridModule, DxFormModule, DxSwitchModule} from "devextreme-angular";
 import {NbChatModule, NbCheckboxModule} from '@nebular/theme';
+import { ComentariosComponent } from './comentarios/comentarios.component';
+import {MatDialogModule} from '@angular/material';
 
 
 @NgModule({
-  declarations: [ConsultaComponent],
+  declarations: [ConsultaComponent, ComentariosComponent],
   imports: [
     CommonModule,
     InicioRoutingModule,
@@ -16,7 +18,9 @@ import {NbChatModule, NbCheckboxModule} from '@nebular/theme';
     DxFormModule,
     DxChartModule, NbCheckboxModule,
     DxSwitchModule,
-    NbChatModule
-  ]
+    NbChatModule,
+    MatDialogModule,
+  ],
+  entryComponents: [ComentariosComponent]
 })
 export class InicioModule { }

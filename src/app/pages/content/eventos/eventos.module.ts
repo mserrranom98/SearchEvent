@@ -10,13 +10,15 @@ import {
   DxSelectBoxModule,
   DxTemplateModule,
   DxTextAreaModule, DxToolbarModule
-} from "devextreme-angular";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {MatStepperModule} from "@angular/material";
+} from 'devextreme-angular';
+import {MatButtonModule, MatDialogModule, MatStepperModule} from '@angular/material';
+import { EditarComponent } from './editar/editar.component';
+import { DetalleComponent } from './detalle/detalle.component';
+import { AgregarComponent } from './agregar/agregar.component';
 
 
 @NgModule({
-  declarations: [ConsultaComponent],
+  declarations: [ConsultaComponent, EditarComponent, DetalleComponent, AgregarComponent],
   imports: [
     CommonModule,
     EventosRoutingModule,
@@ -30,7 +32,9 @@ import {MatStepperModule} from "@angular/material";
     DxNumberBoxModule,
     DxCheckBoxModule,
     DxToolbarModule,
-    DxTextAreaModule
-  ]
+    MatDialogModule,
+    DxTextAreaModule, MatButtonModule
+  ],
+  entryComponents: [EditarComponent, DetalleComponent, AgregarComponent]
 })
 export class EventosModule { }

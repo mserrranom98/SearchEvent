@@ -70,7 +70,7 @@
           <div class="row">
             <div class="col-5 col-md-4">
               <div class="icon-big text-center icon-warning">
-                <i class="nc-button-play text-warning"></i>
+                <i class="nc-icon nc-check-2 text-success"></i>
               </div>
             </div>
             <div class="col-7 col-md-8">
@@ -211,17 +211,13 @@
     </dx-chart>
 
     <div id="data-grid-demo">
-      <dx-data-grid id="tableCuentas" [dataSource]="employees" keyExpr="ID" [showBorders]="true">
+      <dx-data-grid id="tableCuentas" [dataSource]="actividades" keyExpr="NombreActividad" [showBorders]="true">
         <dxo-header-filter [visible]="true">
         </dxo-header-filter>
         <dxo-search-panel [visible]="true" [width]="240" placeholder="Buscar...">
 
         </dxo-search-panel>
         <dxo-paging [enabled]="true"></dxo-paging>
-        <dxo-editing mode="form" [allowAdding]="true" [allowUpdating]="true">
-          <dxo-texts cancelRowChanges="Cancelar" editRow="Ir">
-          </dxo-texts>
-        </dxo-editing>
         <dxi-column dataField="NombreActividad" caption="Nombre actividad" disabled="true">
         </dxi-column>
         <dxi-column dataField="FechaInicio" caption="Fecha inicio" disabled="true">
@@ -229,6 +225,11 @@
         <dxi-column dataField="FechaTermino" caption="Fecha termino" disabled="true">
         </dxi-column>
         <dxi-column dataField="Trabajador" disabled="true">
+          <dxo-lookup
+            [dataSource]="Trabajadores"
+            displayExpr="Name"
+            valueExpr="ID">
+          </dxo-lookup>
         </dxi-column>
         <dxi-column dataField="estado"
                     caption="Estado"
@@ -239,65 +240,12 @@
             valueExpr="ID">
           </dxo-lookup>
         </dxi-column>
-        >
-        <dxi-column dataField="Comentarios" [visible]="true">
-        </dxi-column>
+        <dxi-column dataField="editar" [formItem]="{visible: false}" caption="Editar Evento" alignment="center" [allowFiltering]="false" [allowSorting]="false" cellTemplate="evento"></dxi-column>
+        <div *dxTemplate="let data of 'evento'">
+          <img src="../../../../../assets/img/icons/chat-512.png" [width]="20" [height]="20" (click)="openComentarios(data)" alt="Imagen de comentarios">
+        </div>
       </dx-data-grid>
       <br><br>
     </div>
-
-    <div class="form">
-      <div class="dx-fieldset">
-        <div class="dx-field">
-          <div class="dx-field-label">Urgente</div>
-          <div class="dx-field-value">
-            <dx-switch [value]="false"></dx-switch>
-          </div>
-        </div>
-      </div>
-    </div>
-<nb-chat title="Jake" size="medium" status="warning">
-  <nb-chat-message *ngFor="let message of messages"
-                   [type]="message.type"
-                   [message]="message.text"
-                   [reply]="message.reply"
-                   [sender]="message.user.name"
-                   [date]="message.date"
-                   [files]="message.files"
-                   [quote]="message.quote"
-                   [latitude]="message.latitude"
-                   [longitude]="message.longitude"
-                   [avatar]="message.user.avatar"></nb-chat-message>
-  <nb-chat-form (send)="sendMessage($event, 'Jake', 'http://www.reactiongifs.com/r/wnd1.gif', true)"
-                [showButton]="false" [dropFiles]="true">
-  </nb-chat-form>
-</nb-chat>
-
-    <div class="form">
-      <div class="dx-fieldset">
-        <div class="dx-field">
-          <div class="dx-field-label">Urgente</div>
-          <div class="dx-field-value">
-            <dx-switch [value]="false"></dx-switch>
-          </div>
-        </div>
-      </div>
-    </div>
-<nb-chat title="John" size="medium" status="success">
-  <nb-chat-message *ngFor="let message of messages"
-                   [type]="message.type"
-                   [message]="message.text"
-                   [reply]="!message.reply"
-                   [sender]="message.user.name"
-                   [date]="message.date"
-                   [files]="message.files"
-                   [quote]="message.quote"
-                   [latitude]="message.latitude"
-                   [longitude]="message.longitude"
-                   [avatar]="message.user.avatar"></nb-chat-message>
-  <nb-chat-form (send)="sendMessage($event, 'John', 'https://i.gifer.com/no.gif', false)" [showButton]="false"
-                [dropFiles]="true">
-  </nb-chat-form>
-</nb-chat>
   </div>
 </div>

@@ -6,7 +6,7 @@
           <div id="data-grid-demo">
             <div class="div-table">
               <div>
-                <dx-data-grid [dataSource]="employees" keyExpr="ID" [showBorders]="true"
+                <dx-data-grid [dataSource]="establecimientos" keyExpr="Nombre" [showBorders]="true"
                               [masterDetail]="{ enabled: true, template: 'detail' }">
                   <dxo-filter-row [visible]="true">
 
@@ -27,19 +27,23 @@
                   </dxi-column>
                   <dxi-column dataField="Ubicacion">
                   </dxi-column>
+                  <dxi-column dataField="Region">
+                  </dxi-column>
+                  <dxi-column dataField="Ciudad">
+                  </dxi-column>
                   <dxi-column dataField="Estado"
                               caption="Estado"
                               [width]="125">
                     <dxo-lookup
-                      [dataSource]="Estado"
+                      [dataSource]="estados"
                       displayExpr="Name"
                       valueExpr="ID">
                     </dxo-lookup>
                   </dxi-column>
 
-                  <div *dxTemplate="let employees of 'detail'">
+                  <div *dxTemplate="let establecimiento of 'detail'">
                     <dx-data-grid
-                      [dataSource]="employees.data.sectores" keyExpr="ID"
+                      [dataSource]="establecimiento.data.sectores" keyExpr="Nombre"
                       [showBorders]="true"
                       [columnAutoWidth]="true">
                       <dxo-editing mode="form" [allowAdding]="true" [allowUpdating]="true">
