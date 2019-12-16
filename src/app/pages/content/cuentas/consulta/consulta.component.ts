@@ -36,13 +36,12 @@ export class ConsultaComponent implements OnInit {
   getTrabajadores() {
     console.log('INICIO DE CONSULTA DE TRABAJADORES:');
     this.trabajadoresService.getTrabajadores(this.token).subscribe((response: any) => {
-      console.log(response);
+      console.log(response.message);
       if (response.code === '0') {
         this.trabajadores = response.trabajadores;
         this.getPerfiles();
         this.viewTable = true;
       }
-      console.log(response.message);
     }, error => {
       console.log(error);
     });
@@ -51,11 +50,11 @@ export class ConsultaComponent implements OnInit {
   getPerfiles() {
     console.log('INICIO DE CONSULTA DE PERFILES:');
     this.perfilesService.getPerfilesActivo(this.token).subscribe((response: any) => {
+      console.log(response.message);
       if (response.code === '0') {
         this.perfiles = response.perfiles;
         this.viewTable = true;
       }
-      console.log(response.message);
     }, error => {
       console.log(error);
     });

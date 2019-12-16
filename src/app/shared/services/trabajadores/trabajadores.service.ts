@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {GLOBAL_PATH} from '../../models/path/path';
 import {HttpClient} from '@angular/common/http';
-import {Trabajadores} from "../../models/trabajadores/trabajadores.model";
+import {Trabajadores} from '../../models/trabajadores/trabajadores.model';
 
 @Injectable({
   providedIn: 'root'

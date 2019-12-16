@@ -1,8 +1,7 @@
 export class Sectores {
 
-  cantidad: number;
-  estado: boolean;
+  id: string;
   nombre: string;
-  ubicacion: string;
+  capacidad: number;
 
 }

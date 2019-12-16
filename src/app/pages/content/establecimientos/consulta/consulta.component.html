@@ -6,32 +6,46 @@
           <div id="data-grid-demo">
             <div class="div-table">
               <div>
-                <dx-data-grid [dataSource]="establecimientos" keyExpr="Nombre" [showBorders]="true"
-                              [masterDetail]="{ enabled: true, template: 'detail' }">
-                  <dxo-filter-row [visible]="true">
+                <dx-data-grid
+                  [dataSource]="establecimientos"
+                  keyExpr="id"
+                  [showBorders]="true"
+                  [masterDetail]="{ enabled: true, template: 'detail' }"
+                  (onRowUpdated)="updateEstablecimiento($event)"
+                  (onRowInserted)="addEstablecimiento($event)"
+                  (onRowValidating)="validarEstablecimiento($event)"
+                  (onEditorPreparing)="onEditorPreparing($event)">
 
+                  <dxo-filter-row [visible]="true">
                   </dxo-filter-row>
                   <dxo-header-filter [visible]="true">
                   </dxo-header-filter>
                   <dxo-search-panel [visible]="true" [width]="240" placeholder="Buscar...">
-
                   </dxo-search-panel>
                   <dxo-paging [enabled]="false"></dxo-paging>
                   <dxo-editing mode="form" [allowAdding]="true" [allowUpdating]="true">
                     <dxo-texts saveRowChanges="Guardar" cancelRowChanges="Cancelar" editRow="Editar">
                     </dxo-texts>
                   </dxo-editing>
-                  <dxi-column dataField="Nombre" caption="Nombre">
+
+                  <dxi-column dataField="id" [visible]="false" [formItem]="{visible: false}">
                   </dxi-column>
-                  <dxi-column dataField="Capacidad">
+                  <dxi-column dataField="nombre" caption="Nombre">
+                    <dxi-validation-rule type="required" message="El nombre es requerido"></dxi-validation-rule>
                   </dxi-column>
-                  <dxi-column dataField="Ubicacion">
+                  <dxi-column dataField="capacidad" dataType="number" caption="Capacidad">
+                    <dxi-validation-rule type="required" message="La capacidad es requerida"></dxi-validation-rule>
                   </dxi-column>
-                  <dxi-column dataField="Region">
+                  <dxi-column dataField="region" caption="Región">
+                    <dxi-validation-rule type="required" message="La region es requerida"></dxi-validation-rule>
                   </dxi-column>
-                  <dxi-column dataField="Ciudad">
+                  <dxi-column dataField="comuna" caption="Comuna">
+                    <dxi-validation-rule type="required" message="La comuna es requerid"></dxi-validation-rule>
                   </dxi-column>
-                  <dxi-column dataField="Estado"
+                  <dxi-column dataField="ubicacion" caption="Ubicación">
+                    <dxi-validation-rule type="required" message="La ubicacion es requerida"></dxi-validation-rule>
+                  </dxi-column>
+                  <dxi-column dataField="estado"
                               caption="Estado"
                               [width]="125">
                     <dxo-lookup
@@ -45,13 +59,20 @@
                     <dx-data-grid
                       [dataSource]="establecimiento.data.sectores" keyExpr="Nombre"
                       [showBorders]="true"
-                      [columnAutoWidth]="true">
+                      [columnAutoWidth]="true"
+                      (onRowUpdated)="updateSector($event)"
+                      (onRowInserted)="addSector($event)"
+                      (onRowValidating)="validarSector($event)">
                       <dxo-editing mode="form" [allowAdding]="true" [allowUpdating]="true">
                         <dxo-texts saveRowChanges="Guardar" cancelRowChanges="Cancelar" editRow="Editar">
                         </dxo-texts>
                       </dxo-editing>
-                      <dxi-column dataField="Nombre"></dxi-column>
-                      <dxi-column dataField="Capacidad"></dxi-column>
+                      <dxi-column dataField="nombre" caption="Nombre">
+                        <dxi-validation-rule type="required" message="El nombre es requerido"></dxi-validation-rule>
+                      </dxi-column>
+                      <dxi-column dataField="capacidad" dataType="number" caption="Capacidad">
+                        <dxi-validation-rule type="required" message="La capacidad es requerida"></dxi-validation-rule>
+                      </dxi-column>
                     </dx-data-grid>
                   </div>
 
