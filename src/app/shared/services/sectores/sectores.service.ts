@@ -14,19 +14,21 @@ export class SectoresService {
     private http: HttpClient
   ) { }
 
-  updateSector(idToken: string, sector: Sectores) {
+  updateSector(idToken: string, idEstablecimiento: string, sector: Sectores) {
     const body = {
       idToken,
-      sector
+      sector,
+      idEstablecimiento
     };
 
     return this.http.post(this.path + 'updateSector', body);
   }
 
-  addSector(idToken: string, sector: Sectores) {
+  addSector(idToken: string, idEstablecimiento: string, sector: Sectores) {
     const body = {
       idToken,
-      sector
+      sector,
+      idEstablecimiento
     };
 
     return this.http.post(this.path + 'addSector', body);

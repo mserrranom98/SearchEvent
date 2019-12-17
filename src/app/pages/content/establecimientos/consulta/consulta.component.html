@@ -33,14 +33,24 @@
                   <dxi-column dataField="nombre" caption="Nombre">
                     <dxi-validation-rule type="required" message="El nombre es requerido"></dxi-validation-rule>
                   </dxi-column>
-                  <dxi-column dataField="capacidad" dataType="number" caption="Capacidad">
+                  <dxi-column dataField="cantidad" dataType="number" caption="Capacidad">
                     <dxi-validation-rule type="required" message="La capacidad es requerida"></dxi-validation-rule>
                   </dxi-column>
-                  <dxi-column dataField="region" caption="Región">
+                  <dxi-column dataField="region" caption="Región" [setCellValue]="setRegionValue">
                     <dxi-validation-rule type="required" message="La region es requerida"></dxi-validation-rule>
+                    <dxo-lookup
+                      [dataSource]="regiones"
+                      displayExpr="nombre"
+                      valueExpr="id">
+                    </dxo-lookup>
                   </dxi-column>
                   <dxi-column dataField="comuna" caption="Comuna">
-                    <dxi-validation-rule type="required" message="La comuna es requerid"></dxi-validation-rule>
+                    <dxi-validation-rule type="required" message="La comuna es requerida"></dxi-validation-rule>
+                    <dxo-lookup
+                      [dataSource]="getComunas"
+                      displayExpr="nombre"
+                      valueExpr="id">
+                    </dxo-lookup>
                   </dxi-column>
                   <dxi-column dataField="ubicacion" caption="Ubicación">
                     <dxi-validation-rule type="required" message="La ubicacion es requerida"></dxi-validation-rule>
@@ -57,11 +67,11 @@
 
                   <div *dxTemplate="let establecimiento of 'detail'">
                     <dx-data-grid
-                      [dataSource]="establecimiento.data.sectores" keyExpr="Nombre"
+                      [dataSource]="establecimiento.data.sectores" keyExpr="nombre"
                       [showBorders]="true"
                       [columnAutoWidth]="true"
-                      (onRowUpdated)="updateSector($event)"
-                      (onRowInserted)="addSector($event)"
+                      (onRowUpdated)="updateSector($event, establecimiento.data.id)"
+                      (onRowInserted)="addSector($event, establecimiento.data.id)"
                       (onRowValidating)="validarSector($event)">
                       <dxo-editing mode="form" [allowAdding]="true" [allowUpdating]="true">
                         <dxo-texts saveRowChanges="Guardar" cancelRowChanges="Cancelar" editRow="Editar">
@@ -75,7 +85,6 @@
                       </dxi-column>
                     </dx-data-grid>
                   </div>
-
                 </dx-data-grid>
               </div>
             </div>

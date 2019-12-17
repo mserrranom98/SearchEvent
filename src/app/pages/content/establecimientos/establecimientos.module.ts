@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 
 import {EstablecimientosRoutingModule} from './establecimientos-routing.module';
 import {ConsultaComponent} from './consulta/consulta.component';
-import {DxDataGridModule} from 'devextreme-angular';
+import {DxDataGridModule, DxSelectBoxModule} from 'devextreme-angular';
 
 
 @NgModule({
@@ -13,7 +13,8 @@ import {DxDataGridModule} from 'devextreme-angular';
   imports: [
     CommonModule,
     EstablecimientosRoutingModule,
-    DxDataGridModule
+    DxDataGridModule,
+    DxSelectBoxModule
   ]
 })
 export class EstablecimientosModule {
