@@ -61,17 +61,17 @@
       <div *dxTemplate="let data of 'content'">
         <div class="form-group">
           <dx-form id="form"
-                   [formData]="employees">
+                   [formData]="mensaje">
           <dxi-item itemType="group">
-              <dxi-item dataField="Asunto"></dxi-item>
-              <dxi-item dataField="Descripcion" [colSpan]="2" editorType="dxTextArea"
+              <dxi-item dataField="asunto"></dxi-item>
+              <dxi-item dataField="descripcion" [colSpan]="2" editorType="dxTextArea"
                         [editorOptions]="{ height: 140 }"></dxi-item>
           </dxi-item>
           <dxi-item itemType="group">
             <dx-button
               class="button-info"
               text="Enviar "
-              (onClick)="prueba()">
+              (onClick)="enviar()">
             </dx-button>
           </dxi-item>
           </dx-form>

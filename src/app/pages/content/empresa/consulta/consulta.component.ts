@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {EmpresaService} from '../../../../shared/services/empresa/empresa.service';
+import * as firebase from 'firebase/app';
 
 @Component({
   selector: 'app-consulta',
@@ -6,25 +8,59 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConsultaComponent implements OnInit {
 
+  private token: string;
   popupVisible = false;
   popupVisible1 = false;
 
-  empresa = {
-    ID: 1,
-    Nombre: 'Estadio',
-    Ocupacion: 'Entretenimiento',
-    Correo: 'managevent@managevent.cl',
-    Encargado: 'Maria Ulloa Ulloa',
-    Direccion: 'Av. Vicuña Mackena 6565',
-    Cuidad: 'Santiago',
-    Region: 'San Joaquin',
-    Telefono: '226851000',
-    Descripcion: 'Empresa encargada de generar software para empresas generadoras de eventos'
+  empresa = {};
+
+  mensaje = {
+    asunto: '',
+    descripcion: ''
   };
 
-  constructor() { }
+  constructor(
+    private empresaService: EmpresaService
+  ) {
+    this.token = localStorage.getItem('token');
+  }
 
   ngOnInit() {
+  }
+
+  getEmpresa() {
+    console.log('INICIO DE CONSULTA DE EMPRESA:');
+    this.empresaService.getEmpresa(this.token).subscribe((response: any) => {
+      console.log(response.message);
+      if (response.code === '0') {
+        this.empresa = response.empresa;
+      }
+    }, error => {
+      console.log(error);
+    });
+  }
+
+  updateEmpresa(event) {
+    console.log('INICIO DE ACTUALIZACION DE EMPRESA:');
+    this.empresaService.updateEmpresa(this.token, event.data).subscribe((response: any) => {
+      console.log(response.message);
+    }, error => {
+      console.log(error);
+    });
+  }
+
+  updateFile() {
+    // const storageRef = firebase.storage().ref();
+    // const storageRef = firebase.storage().ref();
+  }
+
+  enviar() {
+    console.log('INICIO DE ENVIO DE MENSAJE:');
+    this.empresaService.enviarSolicitud(this.token, this.mensaje).subscribe((response: any) => {
+      console.log(response.message);
+    }, error => {
+      console.log(error);
+    });
   }
 
   solicitudUpdate() {
@@ -34,6 +70,4 @@ export class ConsultaComponent implements OnInit {
   modificarLogo() {
     this.popupVisible1 = true;
   }
-  prueba(){}
-
 }

@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {RegionesService} from '../../../../shared/services/regiones/regiones.service';
 import {EstablecimientosService} from '../../../../shared/services/establecimientos/establecimientos.service';
 import {SectoresService} from '../../../../shared/services/sectores/sectores.service';
-import {Regiones} from '../../../../shared/models/regiones/regiones.model';
 import {Sectores} from '../../../../shared/models/sectores/sectores.model';
 import {Establecimientos} from '../../../../shared/models/establecimientos/establecimientos.model';
 
@@ -11,16 +10,6 @@ import {Establecimientos} from '../../../../shared/models/establecimientos/estab
   templateUrl: './consulta.component.html'
 })
 export class ConsultaComponent implements OnInit {
-
-  constructor(
-    private regionesService: RegionesService,
-    private establecimientosService: EstablecimientosService,
-    private sectoresService: SectoresService
-  ) {
-    this.regiones = this.regionesService.getRegiones();
-    this.comunas = this.regionesService.getComunas();
-    this.token = localStorage.getItem('token');
-  }
 
   private token: string;
 
@@ -37,8 +26,8 @@ export class ConsultaComponent implements OnInit {
     }
   ];
 
-  regiones: any[] = [];
-  comunas: any[] = [];
+  regiones: any[];
+  comunas: any[];
 
   static setEstablecimiento(result): Establecimientos {
     const establecimiento: Establecimientos = new Establecimientos();
@@ -60,6 +49,16 @@ export class ConsultaComponent implements OnInit {
     sector.capacidad = result.capacidad;
 
     return sector;
+  }
+
+  constructor(
+    private regionesService: RegionesService,
+    private establecimientosService: EstablecimientosService,
+    private sectoresService: SectoresService
+  ) {
+    this.regiones = this.regionesService.getRegiones();
+    this.comunas = this.regionesService.getComunas();
+    this.token = localStorage.getItem('token');
   }
 
   ngOnInit() {
@@ -136,25 +135,20 @@ export class ConsultaComponent implements OnInit {
       }
       if (e.parentType === 'dataRow' && e.dataField === 'comuna') {
         console.log(e.row.data.idRegion);
-        e.editorOptions.disabled = (typeof e.row.data.idRegion !== 'number');
+        e.editorOptions.disabled = (typeof e.row.data.region !== 'number');
       }
     }
   }
 
   getComunas(options): any {
-    console.log(options);
-    if (options) {
-      const regionesServiceDev = new RegionesService();
-      return regionesServiceDev.getComunas();
-    }
     return {
       store: this.comunas,
-      filter: options.data ? ['idRegion', '=', options.data.idRegion] : null
+      filter: options.data ? ['region', '=', options.data.region] : null
     };
   }
 
   setRegionValue(rowData: any, value: any): void {
-    rowData.comuna = null;
+    rowData.region = null;
     (this as any).defaultSetCellValue(rowData, value);
   }
 
